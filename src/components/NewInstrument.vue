@@ -5,16 +5,17 @@
     2.点击乐器进入乐器详情页
     3.鼠标放在乐器标签页上时有动画效果，悬停3s后播放乐器音乐 -->
     <p id="introduction">中华传统乐器是中华文化的瑰宝，它们承载着丰富的历史文化内涵和深厚的民族情感。这些乐器不仅具有独特的音色和表现力，而且在各种场合都发挥着重要作用。</p>
-
   </div>
-  <div id="categories">
+
+
+
     <nav id="instrument">
       <a href="#chuiguan">吹管乐器</a>
       <a href="#botan">拨弹乐器</a>
       <a href="#daji">打击乐器</a>
       <a href="#laxian">拉弦乐器</a>
     </nav>
-  </div>
+
   <h1 id="chuiguan">吹管乐器</h1>
   <h1 id="botan">拨弹乐器</h1>
   <h1 id="daji">打击乐器</h1>
@@ -23,21 +24,14 @@
 </template>
 
 <script>
+
 export default {
   name: 'NewInstrument',
   data() {
     return {
     }
   },
-  methods: {
-    scrollToElement(selector)
-    {
-      const element = document.querySelector(selector);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }
+
 }
 
 </script>
@@ -45,7 +39,7 @@ export default {
 <style>
 #introduction{
   position: absolute;
-  left: 180px;
+  text-align: center;
   top: 171px;
   width: 993px;
   height: 186px;
@@ -55,7 +49,7 @@ export default {
   font-weight: 400;
   line-height: 52.13px;
   color: rgba(84, 54, 36, 1);
-  text-align: left;
+
   vertical-align: top;
 }
 #chuiguan{
@@ -153,4 +147,10 @@ nav a{
 :target{
   scroll-margin-top:35px;
   }
+
+.highlight {
+  background-color: yellow;
+  transition: background-color 1s; /* 平滑过渡效果 */
+}
+
 </style>
