@@ -7,8 +7,6 @@
     <p id="introduction">中华传统乐器是中华文化的瑰宝，它们承载着丰富的历史文化内涵和深厚的民族情感。这些乐器不仅具有独特的音色和表现力，而且在各种场合都发挥着重要作用。</p>
   </div>
 
-
-
     <nav id="instrument">
       <a href="#chuiguan">吹管乐器</a>
       <a href="#botan">拨弹乐器</a>
@@ -16,11 +14,135 @@
       <a href="#laxian">拉弦乐器</a>
     </nav>
 
-  <h1 id="chuiguan">吹管乐器</h1>
-  <h1 id="botan">拨弹乐器</h1>
-  <h1 id="daji">打击乐器</h1>
-  <h1 id="laxian">拉弦乐器</h1>
 
+  <div class="topic-container" id="chuiguan">
+    <div class="topic-title" ><h1 class="ititle">吹管乐器</h1></div>
+    <div class="image-row">
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 1">
+        <div class="image-title">图片1描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 2">
+        <div class="image-title">图片2描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 3">
+        <div class="image-title">图片3描述</div>
+      </div>
+    </div>
+    <div class="image-row">
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 4">
+        <div class="image-title">图片4描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 5">
+        <div class="image-title">图片5描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 6">
+        <div class="image-title">图片6描述</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-container" id="botan">
+    <div class="topic-title" ><h1 class="ititle">拨弹乐器</h1></div>
+    <div class="image-row">
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 1">
+        <div class="image-title">图片1描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 2">
+        <div class="image-title">图片2描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 3">
+        <div class="image-title">图片3描述</div>
+      </div>
+    </div>
+    <div class="image-row">
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 4">
+        <div class="image-title">图片4描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 5">
+        <div class="image-title">图片5描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 6">
+        <div class="image-title">图片6描述</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-container" id="daji">
+    <div class="topic-title" ><h1 class="ititle">打击乐器</h1></div>
+    <div class="image-row">
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 1">
+        <div class="image-title">图片1描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 2">
+        <div class="image-title">图片2描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 3">
+        <div class="image-title">图片3描述</div>
+      </div>
+    </div>
+    <div class="image-row">
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 4">
+        <div class="image-title">图片4描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 5">
+        <div class="image-title">图片5描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 6">
+        <div class="image-title">图片6描述</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="topic-container" id="laxian">
+    <div class="topic-title" ><h1 class="ititle">拉弦乐器</h1></div>
+    <div class="image-row">
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 1">
+        <div class="image-title">图片1描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 2">
+        <div class="image-title">图片2描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 3">
+        <div class="image-title">图片3描述</div>
+      </div>
+    </div>
+    <div class="image-row">
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 4">
+        <div class="image-title">图片4描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 5">
+        <div class="image-title">图片5描述</div>
+      </div>
+      <div class="flex-item">
+        <img src="../assets/img/background.png" alt="Image 6">
+        <div class="image-title">图片6描述</div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -37,6 +159,10 @@ export default {
 </script>
 
 <style>
+img
+{
+
+}
 #introduction{
   position: absolute;
   text-align: center;
@@ -52,71 +178,6 @@ export default {
 
   vertical-align: top;
 }
-#chuiguan{
-  left: 599px;
-  top: 635px;
-  width: 132px;
-  height: 56px;
-  opacity: 1;
-  /** 文本1 */
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 46.34px;
-  color: rgba(51, 34, 23, 1);
-  text-align: left;
-  vertical-align: top;
-  position: absolute;
-}
-
-#botan{
-  left: 597px;
-  top: 1354px;
-  width: 132px;
-  height: 56px;
-  opacity: 1;
-  /** 文本1 */
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 46.34px;
-  color: rgba(51, 34, 23, 1);
-  text-align: left;
-  vertical-align: top;
-  position: absolute;
-}
-
-#daji{
-  left: 607px;
-  top: 2073px;
-  width: 132px;
-  height: 56px;
-  opacity: 1;
-  /** 文本1 */
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 46.34px;
-  color: rgba(51, 34, 23, 1);
-  text-align: left;
-  vertical-align: top;
-  position: absolute;
-}
-
-#laxian{
-  left: 607px;
-  top: 2792px;
-  width: 132px;
-  height: 56px;
-  opacity: 1;
-  /** 文本1 */
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 46.34px;
-  color: rgba(51, 34, 23, 1);
-  text-align: left;
-  vertical-align: top;
-  position: absolute;
-
-}
-
 
 a{
   text-decoration: none;
@@ -145,12 +206,71 @@ nav a{
 }
 
 :target{
-  scroll-margin-top:35px;
+  scroll-margin-top:1vw;
   }
 
-.highlight {
-  background-color: yellow;
-  transition: background-color 1s; /* 平滑过渡效果 */
+.topic-container {
+  margin-bottom: 20px;
+}
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5vw; /* 在图片行之间添加一些间距 */
+}
+.flex-item {
+  width: 30vw; /* 每张图片占容器的1/3 */
+  margin-bottom: 2vw; /* 在图片和小标题之间添加一些间距 */
+  background-color:  rgba(204, 204, 204, 1); /* 设置圆角容器背景颜色 */
+  margin-right: 3vw;
+  overflow: hidden;
+  height: 200px;
+  opacity: 1;
+  border-radius: 25px;
+}
+.flex-item:last-child {
+  margin-right: 0;
 }
 
+.flex-item img {
+  width: 65%;
+  height: auto;
+}
+.image-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 46.34px;
+  color: rgba(51, 34, 23, 1);
+  text-align: center;
+  vertical-align: top;
+
+}
+.ititle{
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 46.34px;
+  color: rgba(51, 34, 23, 1);
+  vertical-align: top;
+}
+#chuiguan{
+
+  top: 635px;
+  position: absolute;
+}
+
+#botan{
+  top: 1354px;
+  position: absolute;
+}
+
+#daji{
+  top: 2073px;
+  position: absolute;
+}
+
+#laxian{
+  top: 2792px;
+  position: absolute;
+}
 </style>
