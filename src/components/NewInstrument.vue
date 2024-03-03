@@ -128,13 +128,12 @@ a{
   align-items: center;
   background-color:rgba(215, 213, 188, 1);
   top: 402px;
-  width: 1215px;
+  width: 100vw;
   height: 115px;
   position: absolute;
   z-index: 100;
   font-size: 40px;
   font-weight: 400;
-
 }
 nav a:hover {
   color: #ffa91eba;
