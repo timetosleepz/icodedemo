@@ -1,5 +1,6 @@
 <!-- 首页部分，包含欢迎界面和历史摘要页 -->
 import 'animate.css'
+
 <template>
 	<div id="welcome">
 		<img alt="background" src="../assets/img/background.png">
@@ -56,7 +57,7 @@ export default {
 
 <style>
 #welcome {
-	width: 100%;
+	width: 100vw;
 	top: 1vw;
 }
 

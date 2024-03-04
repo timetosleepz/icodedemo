@@ -1,4 +1,5 @@
 <template>
+  <NewSearch v-model:message="newmessage"></NewSearch>
   <div>
     <!-- todo：用v-for制作一个乐器展示页 -->
     <!-- 三点要求：1.表层按照即时设计里面做
@@ -13,8 +14,6 @@
       <a href="#daji">打击乐器</a>
       <a href="#laxian">拉弦乐器</a>
     </nav>
-
-
   <div class="topic-container" id="chuiguan">
     <div class="topic-title" ><h1 class="ititle">吹管乐器</h1></div>
     <div class="image-row">
@@ -146,11 +145,13 @@
 </template>
 
 <script>
+import NewSearch from './NewSearch'
 
 export default {
-  name: 'NewInstrument',
+  components: {NewSearch},
   data() {
     return {
+      newmessage: ''
     }
   },
 
@@ -159,49 +160,37 @@ export default {
 </script>
 
 <style>
-img
-{
-
-}
+/* 乐器展示页样式 */
 #introduction{
-  position: absolute;
   text-align: center;
-  top: 171px;
-  width: 993px;
-  height: 186px;
-  opacity: 1;
+  top: 10vw;
+  width: 70vw;
   /** 文本1 */
-  font-size: 36px;
+  font-size: 2.2em;
   font-weight: 400;
   line-height: 52.13px;
   color: rgba(84, 54, 36, 1);
-
   vertical-align: top;
 }
 
-a{
-  text-decoration: none;
-}
 #instrument{
   display: flex;
   justify-content: space-around;
-  left: 0px;
   align-items: center;
   background-color:rgba(215, 213, 188, 1);
-  top: 402px;
+  margin-top: 25vw;
   width: 100vw;
-  height: 115px;
-  position: absolute;
-  z-index: 100;
+  height: 10vw;
   font-size: 40px;
   font-weight: 400;
 }
 nav a:hover {
-  color: #ffa91eba;
+  color: #ffa91e66;
 }
 nav a{
   color:black;
   transition: color 0.4s ease-in-out;
+  text-decoration: none;
 }
 
 :target{
@@ -209,35 +198,31 @@ nav a{
   }
 
 .topic-container {
-  margin-bottom: 20px;
+  margin-bottom: 10vw;
+  justify-content: center;
 }
 .image-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5vw; /* 在图片行之间添加一些间距 */
+  width: 100vw;
+  margin-top: 0%; /* 在图片行之间添加一些间距 */
 }
 .flex-item {
-  width: 30vw; /* 每张图片占容器的1/3 */
+  width: 24vw; /* 每张图片占容器的1/3 */
   margin-bottom: 2vw; /* 在图片和小标题之间添加一些间距 */
-  background-color:  rgba(204, 204, 204, 1); /* 设置圆角容器背景颜色 */
-  margin-right: 3vw;
+  background-color:  rgba(204, 204, 204, 0); /* 设置圆角容器背景颜色 */
   overflow: hidden;
-  height: 200px;
   opacity: 1;
-  border-radius: 25px;
-}
-.flex-item:last-child {
-  margin-right: 0;
 }
 
 .flex-item img {
-  width: 65%;
+  width: 90%;
   height: auto;
+  border-radius: 20px;
 }
 .image-title {
-  font-size: 15px;
+  font-size: 2em;
   font-weight: 700;
-  line-height: 46.34px;
   color: rgba(51, 34, 23, 1);
   text-align: center;
   vertical-align: top;
@@ -252,14 +237,15 @@ nav a{
   color: rgba(51, 34, 23, 1);
   vertical-align: top;
 }
-#chuiguan{
 
-  top: 635px;
+/* 乐器容器的样式 */
+#chuiguan{
+  margin-top: 0vw;
   position: absolute;
 }
 
 #botan{
-  top: 1354px;
+	top: 1354px;
   position: absolute;
 }
 
