@@ -29,8 +29,6 @@
         <img src="../assets/img/background.png" alt="Image 3">
         <div class="image-title">图片3描述</div>
       </div>
-    </div>
-    <div class="image-row">
       <div class="flex-item">
         <img src="../assets/img/background.png" alt="Image 4">
         <div class="image-title">图片4描述</div>
@@ -61,8 +59,6 @@
         <img src="../assets/img/background.png" alt="Image 3">
         <div class="image-title">图片3描述</div>
       </div>
-    </div>
-    <div class="image-row">
       <div class="flex-item">
         <img src="../assets/img/background.png" alt="Image 4">
         <div class="image-title">图片4描述</div>
@@ -92,9 +88,7 @@
       <div class="flex-item">
         <img src="../assets/img/background.png" alt="Image 3">
         <div class="image-title">图片3描述</div>
-      </div>
     </div>
-    <div class="image-row">
       <div class="flex-item">
         <img src="../assets/img/background.png" alt="Image 4">
         <div class="image-title">图片4描述</div>
@@ -126,8 +120,6 @@
         <img src="../assets/img/background.png" alt="Image 3">
         <div class="image-title">图片3描述</div>
       </div>
-    </div>
-    <div class="image-row">
       <div class="flex-item">
         <img src="../assets/img/background.png" alt="Image 4">
         <div class="image-title">图片4描述</div>
@@ -162,8 +154,10 @@ export default {
 <style>
 /* 乐器展示页样式 */
 #introduction{
+  overflow: auto;
+  max-height:20vw;
   text-align: center;
-  top: 10vw;
+  top: 5vw;
   width: 70vw;
   /** 文本1 */
   font-size: 2.2em;
@@ -179,7 +173,7 @@ export default {
   align-items: center;
   background-color:rgba(215, 213, 188, 1);
   margin-top: 25vw;
-  width: 100vw;
+  width: 100%;
   height: 10vw;
   font-size: 40px;
   font-weight: 400;
@@ -197,21 +191,18 @@ nav a{
   scroll-margin-top:1vw;
   }
 
-.topic-container {
-  margin-bottom: 10vw;
-  justify-content: center;
-}
 .image-row {
   display: flex;
   justify-content: space-between;
-  width: 100vw;
-  margin-top: 0%; /* 在图片行之间添加一些间距 */
+  flex-wrap: wrap;
 }
 .flex-item {
+  flex: 1 0 33.33%; /* 每张图片占容器的1/3 */
   width: 24vw; /* 每张图片占容器的1/3 */
-  margin-bottom: 2vw; /* 在图片和小标题之间添加一些间距 */
+  margin-bottom: 5vw; /* 在图片和小标题之间添加一些间距 */
   background-color:  rgba(204, 204, 204, 0); /* 设置圆角容器背景颜色 */
   overflow: hidden;
+  height: 24vw;
   opacity: 1;
 }
 
@@ -226,36 +217,17 @@ nav a{
   color: rgba(51, 34, 23, 1);
   text-align: center;
   vertical-align: top;
-
+  margin-top: 1vw;
+  z-index: 10;
 }
 .ititle{
   text-align: center;
-  margin-bottom: 10px;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
-  line-height: 46.34px;
+  line-height: 10vw;
   color: rgba(51, 34, 23, 1);
   vertical-align: top;
 }
 
 /* 乐器容器的样式 */
-#chuiguan{
-  margin-top: 0vw;
-  position: absolute;
-}
-
-#botan{
-	top: 1354px;
-  position: absolute;
-}
-
-#daji{
-  top: 2073px;
-  position: absolute;
-}
-
-#laxian{
-  top: 2792px;
-  position: absolute;
-}
 </style>

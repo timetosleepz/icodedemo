@@ -15,7 +15,9 @@ import 'animate.css'
 			</li>
 		</ul>
 		<div id="content">
-			{{ msg[selectedIndex] }}
+			<div id="record">
+				{{ msg[selectedIndex] }}
+			</div>
 			<button />
 			<button />
 		</div>
@@ -57,7 +59,7 @@ export default {
 
 <style>
 #welcome {
-	width: 100vw;
+	width: 100%;
 	top: 1vw;
 }
 
@@ -107,6 +109,7 @@ h1 {
 }
 
 #content {
+	height: 43vw;
 	width: 70vw;
 	margin: 0;
 	padding: 0;
@@ -121,6 +124,10 @@ h1 {
 	white-space: pre-wrap;
 	position: relative;
 	text-indent: 2em;
+}
+#record {
+	max-height: 100%;
+	overflow: auto;
 }
 
 /* 翻页键的样式 */
