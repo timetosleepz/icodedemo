@@ -1,16 +1,16 @@
 <template id="app">
-  <MyNavigation />
-  <router-view />
+	<MyNavigation />
+	<router-view />
 </template>
 
 <script>
 import MyNavigation from './components/MyNavigation'
 
 export default {
-  name: 'App',
-  components: {
-    MyNavigation
-  }
+	name: 'App',
+	components: {
+		MyNavigation
+	}
 }
 </script>
 
