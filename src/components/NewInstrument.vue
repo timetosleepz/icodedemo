@@ -179,7 +179,7 @@ export default {
   font-weight: 400;
 }
 nav a:hover {
-  color: #ffa91e66;
+  color: #2d1e0566;
 }
 nav a{
   color:black;
