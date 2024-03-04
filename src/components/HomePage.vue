@@ -1,5 +1,6 @@
 <!-- 首页部分，包含欢迎界面和历史摘要页 -->
 import 'animate.css'
+
 <template>
 	<div id="welcome">
 		<img alt="background" src="../assets/img/background.png">
@@ -14,7 +15,9 @@ import 'animate.css'
 			</li>
 		</ul>
 		<div id="content">
-			{{ msg[selectedIndex] }}
+			<div id="record">
+				{{ msg[selectedIndex] }}
+			</div>
 			<button />
 			<button />
 		</div>
@@ -106,6 +109,7 @@ h1 {
 }
 
 #content {
+	height: 43vw;
 	width: 70vw;
 	margin: 0;
 	padding: 0;
@@ -120,6 +124,10 @@ h1 {
 	white-space: pre-wrap;
 	position: relative;
 	text-indent: 2em;
+}
+#record {
+	max-height: 100%;
+	overflow: auto;
 }
 
 /* 翻页键的样式 */

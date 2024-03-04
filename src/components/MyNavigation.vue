@@ -24,7 +24,7 @@ export default {
   align-items: center;
   background-color: #7590D9;
   top: 0;
-  width: 100vw;
+  width: 100%;
   height: 6.5vh;
   position: fixed;
   z-index: 100;
