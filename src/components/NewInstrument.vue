@@ -109,10 +109,10 @@ export default {
   },
   methods: {
     goToNewMusic(instrument) {
-      // 导航到名为 'NewMusic' 的路由
+
       this.$router.push({
-        name: 'NewMusic',
-        params: { instrumentId: instrument.id } // 假设每个乐器项都有一个 id
+        name: 'InstrumentDetails',
+        params: { instrumentId: instrument.id }
       });
     }
   }
