@@ -15,122 +15,50 @@
       <a href="#laxian">拉弦乐器</a>
     </nav>
   <div class="topic-container" id="chuiguan">
-    <div class="topic-title" ><h1 class="ititle">吹管乐器</h1></div>
+    <div class="topic-title">
+      <h1 class="ititle">吹管乐器</h1>
+    </div>
     <div class="image-row">
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 1">
-        <div class="image-title">图片1描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 2">
-        <div class="image-title">图片2描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 3">
-        <div class="image-title">图片3描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 4">
-        <div class="image-title">图片4描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 5">
-        <div class="image-title">图片5描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 6">
-        <div class="image-title">图片6描述</div>
+      <div v-for="(item, index) in imageItems1" :key="index" class="flex-item">
+        <img :src="item.src" :alt="item.alt" @click="goToNewMusic(item)">
+        <div class="image-title">{{ item.title }} @click="goToNewMusic(item)">{{ item.title }}</div>
       </div>
     </div>
   </div>
 
   <div class="topic-container" id="botan">
-    <div class="topic-title" ><h1 class="ititle">拨弹乐器</h1></div>
+    <div class="topic-title">
+      <h1 class="ititle">拨弹乐器</h1>
+    </div>
     <div class="image-row">
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 1">
-        <div class="image-title">图片1描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 2">
-        <div class="image-title">图片2描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 3">
-        <div class="image-title">图片3描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 4">
-        <div class="image-title">图片4描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 5">
-        <div class="image-title">图片5描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 6">
-        <div class="image-title">图片6描述</div>
+      <div v-for="(item, index) in imageItems2" :key="index" class="flex-item">
+        <img :src="item.src" :alt="item.alt" @click="goToNewMusic(item)">
+        <div class="image-title">{{ item.title }} @click="goToNewMusic(item)">{{ item.title }}</div>
       </div>
     </div>
   </div>
 
   <div class="topic-container" id="daji">
-    <div class="topic-title" ><h1 class="ititle">打击乐器</h1></div>
-    <div class="image-row">
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 1">
-        <div class="image-title">图片1描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 2">
-        <div class="image-title">图片2描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 3">
-        <div class="image-title">图片3描述</div>
+    <div class="topic-title">
+      <h1 class="ititle">打击乐器</h1>
     </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 4">
-        <div class="image-title">图片4描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 5">
-        <div class="image-title">图片5描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 6">
-        <div class="image-title">图片6描述</div>
+    <div class="image-row">
+      <div v-for="(item, index) in imageItems3" :key="index" class="flex-item">
+        <img :src="item.src" :alt="item.alt" @click="goToNewMusic(item)">
+        <div class="image-title">{{ item.title }} @click="goToNewMusic(item)">{{ item.title }}</div>
       </div>
     </div>
   </div>
 
 
   <div class="topic-container" id="laxian">
-    <div class="topic-title" ><h1 class="ititle">拉弦乐器</h1></div>
+    <div class="topic-title">
+      <h1 class="ititle">拉弦乐器</h1>
+    </div>
     <div class="image-row">
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 1">
-        <div class="image-title">图片1描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 2">
-        <div class="image-title">图片2描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 3">
-        <div class="image-title">图片3描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 4">
-        <div class="image-title">图片4描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 5">
-        <div class="image-title">图片5描述</div>
-      </div>
-      <div class="flex-item">
-        <img src="../assets/img/background.png" alt="Image 6">
-        <div class="image-title">图片6描述</div>
+      <div v-for="(item, index) in imageItems4" :key="index" class="flex-item">
+        <img :src="item.src" :alt="item.alt" @click="goToNewMusic(item)">
+        <div class="image-title">{{ item.title }} @click="goToNewMusic(item)">{{ item.title }}</div>
       </div>
     </div>
   </div>
@@ -143,9 +71,51 @@ export default {
   components: {NewSearch},
   data() {
     return {
-      newmessage: ''
+      newmessage: '',
+      imageItems1: [
+        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 4', title: '图片4描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 5', title: '图片5描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 6', title: '图片6描述' }
+      ],
+      imageItems2: [
+        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 4', title: '图片4描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 5', title: '图片5描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 6', title: '图片6描述' }
+      ],
+      imageItems3: [
+        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 4', title: '图片4描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 5', title: '图片5描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 6', title: '图片6描述' }
+      ],
+      imageItems4: [
+        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 4', title: '图片4描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 5', title: '图片5描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 6', title: '图片6描述' }
+      ]
+
     }
   },
+  methods: {
+    goToNewMusic(instrument) {
+      // 导航到名为 'NewMusic' 的路由
+      this.$router.push({
+        name: 'NewMusic',
+        params: { instrumentId: instrument.id } // 假设每个乐器项都有一个 id
+      });
+    }
+  }
 
 }
 
@@ -159,7 +129,6 @@ export default {
   text-align: center;
   top: 5vw;
   width: 70vw;
-  /** 文本1 */
   font-size: 2.2em;
   font-weight: 400;
   line-height: 52.13px;
@@ -229,5 +198,4 @@ nav a{
   vertical-align: top;
 }
 
-/* 乐器容器的样式 */
 </style>

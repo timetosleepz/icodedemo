@@ -14,7 +14,7 @@ const routes = [
   { path: '/instrument', component: NewInstrument },
   { path: '/musician', component: NewMusician },
   { path: '/poem', component: MyPoem},
-  { path: '/music', component: NewMusic}
+  { path: '/music',name: 'NewMusic', component: NewMusic}
 ]
 
 const router = createRouter({
