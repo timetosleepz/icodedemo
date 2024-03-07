@@ -1,9 +1,7 @@
 <template>
-  <div class="specific-page-background">
-    <div>
-      <img class="instru" src="@/assets/img/background.png" alt="instrument">
-      <h1 class="name">二胡</h1>
-   </div>
+  <div>
+    <img class="instru" src="@/assets/img/background.png" alt="instrument">
+    <h1 class="name">二胡</h1>
   </div>
 </template>
 
