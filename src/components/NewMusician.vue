@@ -120,7 +120,8 @@ export default {
 
       this.$router.push({
         name: 'MusicionDetails',
-        params: {musicionId: musicion.id}
+        params: {musicionId: musicion.id},
+        query: { title: musicion.title }
       });
     }
   }

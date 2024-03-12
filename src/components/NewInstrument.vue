@@ -109,15 +109,16 @@ export default {
   },
   methods: {
     goToNewMusic(instrument) {
-
       this.$router.push({
         name: 'InstrumentDetails',
-        params: { instrumentId: instrument.id }
+        params: { instrumentId: instrument.id },
+        query: { title: instrument.title }
       });
+    }
     }
   }
 
-}
+
 
 </script>
 
