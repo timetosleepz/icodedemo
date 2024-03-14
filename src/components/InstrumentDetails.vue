@@ -1,7 +1,4 @@
 <template>
-
-
-
       <div>
         <img class="instru" src="@/assets/img/background.png" alt="instrument">
         <h1 class="name">{{ instrumentTitle }}</h1>
