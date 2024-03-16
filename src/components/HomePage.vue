@@ -1,25 +1,25 @@
 <!-- 首页部分，包含欢迎界面和历史摘要页 -->
-import 'animate.css'
-
 <template>
-	<div id="welcome">
-		<img alt="background" src="../assets/img/background.png">
-		<h1 class="text">欢迎来到乐雅轩！</h1>
-		<h2 class="text">此曲只应天上有，人生难得几回闻</h2>
-	</div>
-	<h1>民族音乐的发展历史</h1>
-	<div id="history">
-		<ul>
-			<li v-for="(item, index) in period" :key="index">
-				<button :class="{ 'selected': selectedIndex === index }" @click="select(index)">{{ item }}</button>
-			</li>
-		</ul>
-		<div id="content">
-			<div id="record">
-				{{ msg[selectedIndex] }}
+	<div>
+		<transition name="fade">
+			<div id="welcome" :class="{ 'animated animate__slideInDown': animate}">
+				<img alt="background" src="../assets/img/background.png">
+				<h1 class="text">欢迎来到乐雅轩！</h1>
+				<h2 class="text">此曲只应天上有，人生难得几回闻</h2>
 			</div>
-			<button />
-			<button />
+		</transition>
+		<h1>民族音乐的发展历史</h1>
+		<div id="history">
+			<ul>
+				<li v-for="(item, index) in period" :key="index">
+					<button :class="{ 'selected': selectedIndex === index }" @click="select(index)">{{ item }}</button>
+				</li>
+			</ul>
+			<div id="content">
+				<div id="record">
+					{{ paragraphs }}
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -27,8 +27,15 @@ import 'animate.css'
 <script>
 export default {
 	name: 'HomePage',
+	beforeRouteEnter(to, from, next) {
+		if (to.path === '/homepage'|| to.path === '/') {
+			// 执行你的动画
+		}
+		next();
+	},
 	data() {
 		return {
+			animate: false,
 			period: ['夏、商', '周', '秦、汉', '三国、两晋、南北朝', '隋、唐', '宋、元', '明、清'],
 			selectedIndex: 0,
 			msg: [
@@ -43,11 +50,14 @@ export default {
 		}
 	},
 	computed: {
-		formattedText() {
-			return this.msg.split('\n').map(paragraph => `<p>${paragraph}</p>`).join('');
-		}
+		paragraphs() {
+			return this.msg[this.selectedIndex].replace(/\n/g, `\n       `);
+		},
 	},
 	// 刚进入页面时
+	mounted() {
+		this.animate = true;
+	},
 	methods: {
 		select(index) {
 			this.selectedIndex = index;
@@ -58,6 +68,11 @@ export default {
 </script>
 
 <style>
+.animate__slideInDown {
+  animation-duration: 0.8s; /* 调整动画的持续时间 */
+  animation-delay: 0.5s; /* 调整动画的延迟 */
+  animation-timing-function: ease-out; /* 调整动画的缓动函数 */
+}
 #welcome {
 	width: 100%;
 	top: 1vw;
@@ -118,44 +133,29 @@ h1 {
 	margin-left: 5vw;
 	font-size: 1.5em;
 	text-align: center;
-	display: flex;
 	align-items: center;
 	text-align: left;
 	white-space: pre-wrap;
 	position: relative;
 	text-indent: 2em;
 }
+
 #record {
-	max-height: 100%;
+	max-height: 95%;
 	overflow: auto;
+	line-height: 1.5;
+	margin: 2% 4%;
+	scrollbar-width: none;
+	box-sizing: border-box;
+	letter-spacing: 0.05em;
 }
 
-/* 翻页键的样式 */
-#content button {
-	width: 0;
-	height: 0;
-	border-left: 25px solid transparent;
-	border-right: 25px solid transparent;
-	border-bottom: 50px solid #cccccc;
-	background: transparent;
-	border-top: none;
-	outline: none;
-	cursor: pointer;
-	position: absolute;
+#record p {
+	display: block;
 }
 
-#content button:nth-of-type(1) {
-	/* 右按钮 */
-	right: 2vw;
-	bottom: 2vw;
-	transform: rotate(90deg);
-}
-
-#content button:nth-of-type(2) {
-	/* 左按钮 */
-	right: 8vw;
-	bottom: 2vw;
-	transform: rotate(270deg);
+#record::-webkit-scrollbar {
+	display: none;
 }
 
 /* 按钮组的样式 */
@@ -178,5 +178,15 @@ button {
 
 button .selected {
 	color: #905CE6;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
 }
 </style>
