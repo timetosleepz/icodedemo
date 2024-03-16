@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import NewSearch from './NewSearch'
 
 export default {
