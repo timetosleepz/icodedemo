@@ -1,64 +1,66 @@
 <template>
-  <NewSearch v-model:message="newmessage"></NewSearch>
   <div>
-    <!-- todo：用v-for制作一个乐器展示页 -->
-    <!-- 三点要求：1.表层按照即时设计里面做
+    <NewSearch v-model:message="newmessage"></NewSearch>
+    <div>
+      <!-- todo：用v-for制作一个乐器展示页 -->
+      <!-- 三点要求：1.表层按照即时设计里面做
     2.点击乐器进入乐器详情页
     3.鼠标放在乐器标签页上时有动画效果，悬停3s后播放乐器音乐 -->
-    <p id="introduction">中华传统乐器是中华文化的瑰宝，它们承载着丰富的历史文化内涵和深厚的民族情感。这些乐器不仅具有独特的音色和表现力，而且在各种场合都发挥着重要作用。</p>
-  </div>
-
-  <nav id="instrument">
-    <a href="#chuiguan">吹管乐器</a>
-    <a href="#botan">拨弹乐器</a>
-    <a href="#daji">打击乐器</a>
-    <a href="#laxian">拉弦乐器</a>
-  </nav>
-  <div class="topic-container" id="chuiguan">
-    <div class="topic-title">
-      <h1 class="ititle">吹管乐器</h1>
+      <p id="introduction">中华传统乐器是中华文化的瑰宝，它们承载着丰富的历史文化内涵和深厚的民族情感。这些乐器不仅具有独特的音色和表现力，而且在各种场合都发挥着重要作用。</p>
     </div>
-    <div class="image-row">
-      <div v-for="(item, index) in imageItems1" :key="index" class="flex-item">
-        <img :src="item.src" :alt="item.alt" @click="goToNewMusic(item)">
-        <div class="image-title" @click="goToNewMusic(item)">{{ item.title }}</div>
+
+    <nav id="instrument">
+      <a href="#chuiguan">吹管乐器</a>
+      <a href="#botan">拨弹乐器</a>
+      <a href="#daji">打击乐器</a>
+      <a href="#laxian">拉弦乐器</a>
+    </nav>
+    <div class="topic-container" id="chuiguan">
+      <div class="topic-title">
+        <h1 class="ititle">吹管乐器</h1>
+      </div>
+      <div class="image-row">
+        <div v-for="(item, index) in imageItems1" :key="index" class="flex-item">
+          <img :src="item.src" :alt="item.alt" @click="goToNewMusic(item)">
+          <div class="image-title" @click="goToNewMusic(item)">{{ item.title }}</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="topic-container" id="botan">
-    <div class="topic-title">
-      <h1 class="ititle">拨弹乐器</h1>
-    </div>
-    <div class="image-row">
-      <div v-for="(item, index) in imageItems2" :key="index" class="flex-item">
-        <img :src="item.src" :alt="item.alt" @click="goToNewMusic(item)">
-        <div class="image-title" @click="goToNewMusic(item)">{{ item.title }}</div>
+    <div class="topic-container" id="botan">
+      <div class="topic-title">
+        <h1 class="ititle">拨弹乐器</h1>
+      </div>
+      <div class="image-row">
+        <div v-for="(item, index) in imageItems2" :key="index" class="flex-item">
+          <img :src="item.src" :alt="item.alt" @click="goToNewMusic(item)">
+          <div class="image-title" @click="goToNewMusic(item)">{{ item.title }}</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="topic-container" id="daji">
-    <div class="topic-title">
-      <h1 class="ititle">打击乐器</h1>
-    </div>
-    <div class="image-row">
-      <div v-for="(item, index) in imageItems3" :key="index" class="flex-item">
-        <img :src="item.src" :alt="item.alt" @click="goToNewMusic(item)">
-        <div class="image-title" @click="goToNewMusic(item)">{{ item.title }}</div>
+    <div class="topic-container" id="daji">
+      <div class="topic-title">
+        <h1 class="ititle">打击乐器</h1>
+      </div>
+      <div class="image-row">
+        <div v-for="(item, index) in imageItems3" :key="index" class="flex-item">
+          <img :src="item.src" :alt="item.alt" @click="goToNewMusic(item)">
+          <div class="image-title" @click="goToNewMusic(item)">{{ item.title }}</div>
+        </div>
       </div>
     </div>
-  </div>
 
 
-  <div class="topic-container" id="laxian">
-    <div class="topic-title">
-      <h1 class="ititle">拉弦乐器</h1>
-    </div>
-    <div class="image-row">
-      <div v-for="(item, index) in imageItems4" :key="index" class="flex-item">
-        <img :src="item.src" :alt="item.alt" @click="goToNewMusic(item)">
-        <div class="image-title" @click="goToNewMusic(item)">{{ item.title }}</div>
+    <div class="topic-container" id="laxian">
+      <div class="topic-title">
+        <h1 class="ititle">拉弦乐器</h1>
+      </div>
+      <div class="image-row">
+        <div v-for="(item, index) in imageItems4" :key="index" class="flex-item">
+          <img :src="item.src" :alt="item.alt" @click="goToNewMusic(item)">
+          <div class="image-title" @click="goToNewMusic(item)">{{ item.title }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -104,7 +106,6 @@ export default {
         { src: require('@/assets/img/background.png'), alt: 'Image 5', title: '图片5描述' },
         { src: require('@/assets/img/background.png'), alt: 'Image 6', title: '图片6描述' }
       ]
-
     }
   },
   methods: {
@@ -125,7 +126,7 @@ export default {
 <style>
 /* 乐器展示页样式 */
 #introduction {
-  overflow: auto;
+  overflow: visible;
   max-height: 20vw;
   text-align: center;
   top: 5vw;
