@@ -67,7 +67,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import NewSearch from './NewSearch'
 
 export default {
@@ -114,7 +113,7 @@ export default {
       this.$router.push({
         name: 'InstrumentDetails',
         params: { instrumentId: instrument.id },
-        query: { title: instrument.title }
+        query: { title: instrument.title, photo: instrument.src}
       });
     }
   }

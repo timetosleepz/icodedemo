@@ -16,7 +16,7 @@
 				</li>
 			</ul>
 			<div id="content">
-				<div id="record">
+				<div id="record" ref="scrollContainer">
 					{{ paragraphs }}
 				</div>
 			</div>
@@ -27,12 +27,6 @@
 <script>
 export default {
 	name: 'HomePage',
-	beforeRouteEnter(to, from, next) {
-		if (to.path === '/homepage'|| to.path === '/') {
-			// 执行你的动画
-		}
-		next();
-	},
 	data() {
 		return {
 			animate: false,
@@ -61,6 +55,7 @@ export default {
 	methods: {
 		select(index) {
 			this.selectedIndex = index;
+			this.$refs.scrollContainer.scrollTop = 0
 		},
 		// 点击按钮，显示对应的历史内容
 	}

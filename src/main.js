@@ -43,9 +43,10 @@ const router = createRouter({
   }
 });
 
+
 router.beforeEach((to, from, next) => {
   // 在这里，你可以添加你的导航守卫逻辑
   next();
 })
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).provide('getAction', 'http://localhost:8088').mount('#app')

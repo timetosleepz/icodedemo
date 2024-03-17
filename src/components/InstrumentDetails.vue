@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <img class="instru" src="@/assets/img/background.png" alt="instrument">
+      <img class="instru" :src="photo" alt="instrument">
       <h1 class="name">{{ instrumentTitle }}</h1>
 
     </div>
@@ -16,18 +16,37 @@
 </template>
 
 <script>
-export default {
+import { inject, ref } from 'vue'
+import axios from 'axios';
 
+export default {
   name: 'InstrumentDetails',
-  created() {
-    const title = this.$route.query.title;
-    if (title) {
-      this.instrumentTitle = title;
-    }
+  setup() {
+    const getAction = inject('getAction');
+    const action = ref(getAction);
+    return { action };
+  },
+  beforeRouteEnter(to, from, next) {
+    next(async vm => {
+      const title = to.query.title;
+      const photo = to.query.photo;
+      if (title) {
+        vm.instrumentTitle = title;
+      }
+      if (photo) {
+        vm.photo = photo;
+      }
+
+      const response = await axios.get(vm.action+'/instrument/笛');
+      vm.show = response.data;
+      alert(vm.show);
+    });
   },
   data() {
     return {
-
+      instrumentTitle: '',
+      photo: '',
+      show: '',
     }
   },
   beforeRouteLeave(to, from, next) {
@@ -35,16 +54,12 @@ export default {
     from.meta.savedPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     next();
   },
+  beforeCreate() {
+    this.savedPosition = this.$route.meta.savedPosition;
+  },
   methods: {
     goBack() {
       this.$router.back();
-      // 恢复滚动位置
-      const savedPosition = this.$route.meta.savedPosition;
-      if (savedPosition !== undefined) {
-        setTimeout(() => {
-          window.scrollTo(0, savedPosition);
-        }, 0);
-      }
     },
   }
 
