@@ -75,7 +75,7 @@ export default {
     return {
       newmessage: '',
       imageItems1: [
-        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '笛' },
         { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
         { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
         { src: require('@/assets/img/background.png'), alt: 'Image 4', title: '图片4描述' },

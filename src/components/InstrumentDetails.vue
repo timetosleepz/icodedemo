@@ -36,23 +36,25 @@ export default {
       if (photo) {
         vm.photo = photo;
       }
-
-      const response = await axios.get(vm.action+'/instrument/笛');
-      vm.show = response.data;
-      alert(vm.show);
+      try {
+        const response = await axios.get(vm.action + '/instrument/' + title);
+        try {
+          const data = response.data;
+          vm.text = data;
+        } catch (jsonError) {
+          alert('解析 JSON 数据时出错:', jsonError);
+        }
+      } catch (axiosError) {
+        alert('请求数据时出错:', axiosError);
+      }
     });
   },
   data() {
     return {
       instrumentTitle: '',
       photo: '',
-      show: '',
+      text: '',
     }
-  },
-  beforeRouteLeave(to, from, next) {
-    // 保存滚动位置
-    from.meta.savedPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    next();
   },
   beforeCreate() {
     this.savedPosition = this.$route.meta.savedPosition;
