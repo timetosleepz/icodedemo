@@ -3,7 +3,7 @@
     <div>
       <img class="instru" :src="photo" alt="instrument">
       <h1 class="name">{{ instrumentTitle }}</h1>
-
+      <a class="play" :href="instrumentLink">音乐欣赏</a>
     </div>
 
     <svg class="back-button" @click="goBack" width="66" height="66" viewBox="0 0 1024 1024" version="1.1"
@@ -30,13 +30,16 @@ export default {
     next(async vm => {
       const title = to.query.title;
       const photo = to.query.photo;
+      const instrumentLink=to.query.instrumentLink;
       if (title) {
         vm.instrumentTitle = title;
       }
       if (photo) {
         vm.photo = photo;
       }
-
+      if (instrumentLink) {
+        vm.instrumentLink = instrumentLink;
+      }
       const response = await axios.get(vm.action+'/instrument/笛');
       vm.show = response.data;
       alert(vm.show);
@@ -45,6 +48,7 @@ export default {
   data() {
     return {
       instrumentTitle: '',
+      instrumentLink:'',
       photo: '',
       show: '',
     }
@@ -88,5 +92,19 @@ export default {
   right: 6vw;
   cursor: pointer;
   width: 2vw;
+}
+.play{
+  position: absolute;
+  top: 25vw;
+  left: 60vw;
+  text-decoration: none;
+  color: coral;
+  transition: color 0.5s ease;
+  width: 10vw;
+  font-size: 2vw;
+}
+.play:hover {
+  color: chocolate;
+
 }
 </style>
