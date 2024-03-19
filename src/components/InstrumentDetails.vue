@@ -37,12 +37,26 @@ export default {
       if (photo) {
         vm.photo = photo;
       }
+<<<<<<< HEAD
       if (instrumentLink) {
         vm.instrumentLink = instrumentLink;
       }
       const response = await axios.get(vm.action+'/instrument/笛');
       vm.show = response.data;
       alert(vm.show);
+=======
+      try {
+        const response = await axios.get(vm.action + '/instrument/' + title);
+        try {
+          const data = response.data;
+          vm.text = data;
+        } catch (jsonError) {
+          alert('解析 JSON 数据时出错:', jsonError);
+        }
+      } catch (axiosError) {
+        alert('请求数据时出错:', axiosError);
+      }
+>>>>>>> f540eeaf7093d15bcb6eb2840cda0a4f18e6020c
     });
   },
   data() {
@@ -50,13 +64,8 @@ export default {
       instrumentTitle: '',
       instrumentLink:'',
       photo: '',
-      show: '',
+      text: '',
     }
-  },
-  beforeRouteLeave(to, from, next) {
-    // 保存滚动位置
-    from.meta.savedPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    next();
   },
   beforeCreate() {
     this.savedPosition = this.$route.meta.savedPosition;
