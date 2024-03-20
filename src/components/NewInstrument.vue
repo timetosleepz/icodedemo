@@ -75,21 +75,12 @@ export default {
     return {
       newmessage: '',
       imageItems1: [
-<<<<<<< HEAD
-        { src: require('@/assets/instrumentpng/suona.png'), alt: '唢呐', title: '唢呐' },
-        { src: require('@/assets/instrumentpng/bawu.png'), alt: '巴乌', title: '巴乌' },
-        { src: require('@/assets/instrumentpng/hulusi.png'), alt: '葫芦丝', title: '葫芦丝',link:"http://m10.music.126.net/20240304202546/8d9802015efc2de816c53f806a73afce/ymusic/4aea/1cf3/c52e/ead22195c8cfc05582060069975e86ba.mp3" },
-        { src: require('@/assets/instrumentpng/di.jpg'), alt: '笛', title: '笛',link:"http://m10.music.126.net/20240304194446/e95db30cb9f125ee689299610735f854/ymusic/dafe/9d61/0a3d/cda6c7b0d322262a7c7f1ae6bf35c19c.mp3" },
-        { src: require('@/assets/instrumentpng/lusheng.png'), alt: '芦笙', title: '芦笙' },
-        { src: require('@/assets/instrumentpng/xun.png'), alt: '埙', title: '埙' }
-=======
         { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '笛' },
         { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
         { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
         { src: require('@/assets/img/background.png'), alt: 'Image 4', title: '图片4描述' },
         { src: require('@/assets/img/background.png'), alt: 'Image 5', title: '图片5描述' },
         { src: require('@/assets/img/background.png'), alt: 'Image 6', title: '图片6描述' }
->>>>>>> f540eeaf7093d15bcb6eb2840cda0a4f18e6020c
       ],
       imageItems2: [
         { src: require('@/assets/instrumentpng/guqin.png'), alt: '古琴', title: '古琴',link:"http://m801.music.126.net/20240304200746/389d9b358475ce5f071a07a29edc1567/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/32571129503/10b1/67d9/7bd6/1e4e01eccfd936acdc1db7d6ffcf7c51.mp3" },
