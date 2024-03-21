@@ -26,62 +26,12 @@ export default {
 </script>
 
 <style>
-p{
-  position: absolute;
+p {
   left: 181px;
-  top: 154px;
-  width: 993px;
-  height: 186px;
-  opacity: 1;
-  /** 文本1 */
-  font-size: 36px;
-  font-weight: 400;
-  letter-spacing: 0px;
-  line-height: 52.13px;
-  color: rgba(84, 54, 36, 1);
-  text-align: left;
-  vertical-align: top;
-}
-
-
-#poem1{
-  position: absolute;
-  left: 99px;
-  top: 495px;
-  width: 541px;
-  height: 317px;
-  opacity: 1;
-  border-radius: 25px;
-  background: rgba(215, 213, 188, 1);
-}
-#poem2{
-  position: absolute;
-  left: 678px;
-  top: 495px;
-  width: 541px;
-  height: 317px;
-  opacity: 1;
-  border-radius: 25px;
-  background: rgba(215, 213, 188, 1);
-}
-#poem3{
-  position: absolute;
-  left: 103px;
-  top: 887px;
-  width: 541px;
-  height: 317px;
-  opacity: 1;
-  border-radius: 25px;
-  background: rgba(215, 213, 188, 1);
-}
-#poem4{
-  position: absolute;
-  left: 682px;
-  top: 887px;
-  width: 541px;
-  height: 317px;
-  opacity: 1;
-  border-radius: 25px;
-  background: rgba(215, 213, 188, 1);
+  font-size: 2.5vw;
+  color: rgba(51, 34, 23, 1);
+  text-align: center;
+  margin-top: 1vw;
+  z-index: 10;
 }
 </style>
