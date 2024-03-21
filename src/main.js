@@ -28,12 +28,16 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
+    if (to.path === from.path) {
+      return savedPosition;
+    }
+  
     return new Promise((resolve) => {
       setTimeout(() => {
-        if(!to.meta.keepAlive){//去到详情页时
+        if(!to.meta.keepAlive){
           position = savedPosition;
           return resolve({top: 0});
-        } else if(!from.meta.keepAlive){//从详情页返回时
+        } else if(!from.meta.keepAlive){
           return resolve(position);
         } else {
           return resolve({top: 0});

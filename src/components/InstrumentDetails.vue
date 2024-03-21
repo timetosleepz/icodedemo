@@ -30,21 +30,13 @@ export default {
     next(async vm => {
       const title = to.query.title;
       const photo = to.query.photo;
-      const instrumentLink=to.query.instrumentLink;
+      // const instrumentLink=to.query.instrumentLink;
       if (title) {
         vm.instrumentTitle = title;
       }
       if (photo) {
         vm.photo = photo;
       }
-<<<<<<< HEAD
-      if (instrumentLink) {
-        vm.instrumentLink = instrumentLink;
-      }
-      const response = await axios.get(vm.action+'/instrument/笛');
-      vm.show = response.data;
-      alert(vm.show);
-=======
       try {
         const response = await axios.get(vm.action + '/instrument/' + title);
         try {
@@ -56,7 +48,6 @@ export default {
       } catch (axiosError) {
         alert('请求数据时出错:', axiosError);
       }
->>>>>>> f540eeaf7093d15bcb6eb2840cda0a4f18e6020c
     });
   },
   data() {

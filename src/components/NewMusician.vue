@@ -8,10 +8,12 @@
 
       <p id="introduction">中华传统音乐家，是中华文化的璀璨星辰，他们承载了深厚的历史底蕴与浓烈的民族情感，以精湛的技艺和独特的风格，为中华文化的传承与发展作出了杰出贡献。</p>
     </div>
-    <div class="image-row">
-      <div v-for="(item, index) in musicians" :key="index" class="musician-item">
-        <img :src="item.src" :alt="item.alt" class="musician-image" @click="goToNewMusicion(item)">
-        <div class="musician-name" @click="goToNewMusicion(item)">{{ item.title }}</div>
+    <div id="musician">
+      <div class="image-row">
+        <div v-for="(item, index) in musicians" :key="index" class="musician-item">
+          <img :src="item.src" :alt="item.alt" class="musician-image" @click="goToNewMusicion(item)">
+          <div class="musician-name" @click="goToNewMusicion(item)">{{ item.title }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -24,36 +26,36 @@ export default {
   name: 'NewMusician',
   data() {
     return {
-      musicians: [ { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+      musicians: [{ src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
+      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
       ]
     }
   },
@@ -71,6 +73,9 @@ export default {
 </script>
 
 <style>
+#musician {
+  margin-top: 25vw;
+}
 #introduction {
   position: absolute;
   top: 8vw;
@@ -79,12 +84,15 @@ export default {
   text-align: center;
 
 }
+
 .image-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 一行显示三个 */
-  grid-gap: 1rem; /* 间隙大小 */
-  padding-top: 29vw; /* 根据需要调整 */
-  padding-left: 5rem; /* 向右平移的距离 */
+  grid-template-columns: repeat(3, 1fr);
+  /* 一行显示三个 */
+  grid-gap: 1rem;
+  /* 间隙大小 */
+  padding-left: 5rem;
+  /* 向右平移的距离 */
 }
 
 .musician-item {
@@ -116,13 +124,17 @@ export default {
   margin-top: 1vw;
   z-index: 10;
 }
+
 .musician-image {
-  border-radius: 0.5rem; /* 圆角大小 */
-  overflow: hidden; /* 确保圆角有效 */
-  width: 100%; /* 图片宽度调整为100%，以适应容器 */
-  height: auto; /* 保持图片的宽高比 */
-  object-fit: cover; /* 裁剪图片以覆盖整个容器 */
+  border-radius: 0.5rem;
+  /* 圆角大小 */
+  overflow: hidden;
+  /* 确保圆角有效 */
+  width: 100%;
+  /* 图片宽度调整为100%，以适应容器 */
+  height: auto;
+  /* 保持图片的宽高比 */
+  object-fit: cover;
+  /* 裁剪图片以覆盖整个容器 */
 }
-
-
 </style>
