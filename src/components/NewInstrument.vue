@@ -17,7 +17,7 @@
     </nav>
     <div class="topic-container" id="chuiguan">
       <div class="topic-title">
-        <h1 class="ititle">吹管乐器</h1>
+        <h1 class="intitle">吹管乐器</h1>
       </div>
       <div class="image-row">
         <div v-for="(item, index) in imageItems1" :key="index" class="flex-item">
@@ -29,7 +29,7 @@
 
     <div class="topic-container" id="botan">
       <div class="topic-title">
-        <h1 class="ititle">拨弹乐器</h1>
+        <h1 class="intitle">拨弹乐器</h1>
       </div>
       <div class="image-row">
         <div v-for="(item, index) in imageItems2" :key="index" class="flex-item">
@@ -41,7 +41,7 @@
 
     <div class="topic-container" id="daji">
       <div class="topic-title">
-        <h1 class="ititle">打击乐器</h1>
+        <h1 class="intitle">打击乐器</h1>
       </div>
       <div class="image-row">
         <div v-for="(item, index) in imageItems3" :key="index" class="flex-item">
@@ -54,7 +54,7 @@
 
     <div class="topic-container" id="laxian">
       <div class="topic-title">
-        <h1 class="ititle">拉弦乐器</h1>
+        <h1 class="intitle">拉弦乐器</h1>
       </div>
       <div class="image-row">
         <div v-for="(item, index) in imageItems4" :key="index" class="flex-item">
@@ -75,21 +75,12 @@ export default {
     return {
       newmessage: '',
       imageItems1: [
-<<<<<<< HEAD
-        { src: require('@/assets/instrumentpng/suona.png'), alt: '唢呐', title: '唢呐' },
+        { src: require('@/assets/instrumentpng/di.jpg'), alt: '笛', title: '笛' },
         { src: require('@/assets/instrumentpng/bawu.png'), alt: '巴乌', title: '巴乌' },
         { src: require('@/assets/instrumentpng/hulusi.png'), alt: '葫芦丝', title: '葫芦丝',link:"http://m10.music.126.net/20240304202546/8d9802015efc2de816c53f806a73afce/ymusic/4aea/1cf3/c52e/ead22195c8cfc05582060069975e86ba.mp3" },
-        { src: require('@/assets/instrumentpng/di.jpg'), alt: '笛', title: '笛',link:"http://m10.music.126.net/20240304194446/e95db30cb9f125ee689299610735f854/ymusic/dafe/9d61/0a3d/cda6c7b0d322262a7c7f1ae6bf35c19c.mp3" },
+        { src: require('@/assets/instrumentpng/suona.png'), alt: '唢呐', title: '唢呐',link:"http://m10.music.126.net/20240304194446/e95db30cb9f125ee689299610735f854/ymusic/dafe/9d61/0a3d/cda6c7b0d322262a7c7f1ae6bf35c19c.mp3" },
         { src: require('@/assets/instrumentpng/lusheng.png'), alt: '芦笙', title: '芦笙' },
         { src: require('@/assets/instrumentpng/xun.png'), alt: '埙', title: '埙' }
-=======
-        { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '笛' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 4', title: '图片4描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 5', title: '图片5描述' },
-        { src: require('@/assets/img/background.png'), alt: 'Image 6', title: '图片6描述' }
->>>>>>> f540eeaf7093d15bcb6eb2840cda0a4f18e6020c
       ],
       imageItems2: [
         { src: require('@/assets/instrumentpng/guqin.png'), alt: '古琴', title: '古琴',link:"http://m801.music.126.net/20240304200746/389d9b358475ce5f071a07a29edc1567/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/32571129503/10b1/67d9/7bd6/1e4e01eccfd936acdc1db7d6ffcf7c51.mp3" },
@@ -97,7 +88,7 @@ export default {
         { src: require('@/assets/instrumentpng/konghou.png'), alt: '箜篌', title: '箜篌' },
         { src: require('@/assets/instrumentpng/liuqin.png'), alt: '柳琴', title: '柳琴' },
         { src: require('@/assets/instrumentpng/yangqin.png'), alt: '扬琴', title: '扬琴' },
-        { src: require('@/assets/instrumentpng/yehu.png'), alt: '椰壶', title: '椰壶' }
+        { src: require('@/assets/instrumentpng/yueqin.png'), alt: '月琴', title: '月琴' }
       ],
       imageItems3: [
         { src: require('@/assets/instrumentpng/bangzi.png'), alt: '梆子', title: '梆子' },
@@ -110,9 +101,9 @@ export default {
       imageItems4: [
         { src: require('@/assets/instrumentpng/banhu.png'), alt: '板胡', title: '板胡' },
         { src: require('@/assets/instrumentpng/erhu.png'), alt: '二胡', title: '二胡',link:"http://m10.music.126.net/20240304200118/868e4f1061ce34b4569d8688bce58de6/ymusic/9e66/62a5/a015/3115db359dc5ebd8a12eb7e99079f35b.mp3" },
-        { src: require('@/assets/instrumentpng/gaohu.png'), alt: '高胡', title: '高胡' },
-        { src: require('@/assets/instrumentpng/jinghu.png'), alt: '京胡', title: '京胡' },
         { src: require('@/assets/instrumentpng/matouqin.png'), alt: '马头琴', title: '马头琴' },
+        { src: require('@/assets/instrumentpng/jinghu.png'), alt: '京胡', title: '京胡' },
+        { src: require('@/assets/instrumentpng/gaohu.png'), alt: '高胡', title: '高胡' },
         { src: require('@/assets/instrumentpng/dongbula.png'), alt: '东不拉', title: '东不拉' }
       ]
     }
@@ -185,19 +176,24 @@ nav a {
   /* 每张图片占容器的1/3 */
   width: 24vw;
   /* 每张图片占容器的1/3 */
-  margin-bottom: 5vw;
+  margin-bottom: 2vw;
   /* 在图片和小标题之间添加一些间距 */
   background-color: rgba(204, 204, 204, 0);
   /* 设置圆角容器背景颜色 */
   overflow: hidden;
-  height: 24vw;
+  //height: 24vw;
   opacity: 1;
+  position: relative; /* 添加这一行 */
+  height: auto; /* 允许容器根据内容自动调整高度 */
 }
 
 .flex-item img {
   width: 90%;
   height: auto;
   border-radius: 20px;
+}
+.topic-title {
+  margin-bottom: 1vw; /* 根据需要调整 */
 }
 
 .image-title {
@@ -210,7 +206,7 @@ nav a {
   z-index: 10;
 }
 
-.ititle {
+.intitle {
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
