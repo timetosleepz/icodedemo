@@ -181,10 +181,9 @@ nav a {
   background-color: rgba(204, 204, 204, 0);
   /* 设置圆角容器背景颜色 */
   overflow: hidden;
-  //height: 24vw;
   opacity: 1;
-  position: relative; /* 添加这一行 */
-  height: auto; /* 允许容器根据内容自动调整高度 */
+  position: relative;
+  height: auto;
 }
 
 .flex-item img {
@@ -192,9 +191,7 @@ nav a {
   height: auto;
   border-radius: 20px;
 }
-.topic-title {
-  margin-bottom: 1vw; /* 根据需要调整 */
-}
+
 
 .image-title {
   font-size: 2em;

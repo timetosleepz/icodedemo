@@ -11,22 +11,49 @@
 </template>
 
 <script>
+import { ref, inject } from 'vue';
+import axios from 'axios';
+
 export default {
   name: 'MusicionDetails',
-  created() {
-
-    const title = this.$route.query.title;
-    if (title) {
-      this.musicionTitle = title;
-    }
+  setup() {
+    const getAction = inject('getAction');
+    const action = ref(getAction);
+    return { action };
+  },
+  beforeRouteEnter(to, from, next) {
+    next(async vm => {
+      const title = to.query.title;
+      const photo = to.query.photo;
+      if (title) {
+        vm.instrumentTitle = title;
+      }
+      if (photo) {
+        vm.photo = photo;
+      }
+      try {
+        const response = await axios.get(vm.action + '/instrument/' + title);
+        try {
+          const data = response.data;
+          vm.text = data;
+        } catch (jsonError) {
+          alert('解析 JSON 数据时出错:', jsonError);
+        }
+      } catch (axiosError) {
+        alert('请求数据时出错:', axiosError);
+      }
+    });
   },
   data() {
     return {}
   },
+  beforeCreate() {
+    this.savedPosition = this.$route.meta.savedPosition;
+  },
   methods: {
     goBack() {
       this.$router.back();
-    }
+    },
   }
 }
 </script>
