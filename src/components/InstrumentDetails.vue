@@ -3,7 +3,9 @@
     <div>
       <img class="instru" :src="photo" alt="instrument">
       <h1 class="name">{{ instrumentTitle }}</h1>
-      <a class="play" :href="instrumentLink">音乐欣赏</a>
+    </div>
+    <div class="play">
+      <h5>{{ paragraphs }}</h5>
     </div>
 
     <svg class="back-button" @click="goBack" width="66" height="66" viewBox="0 0 1024 1024" version="1.1"
@@ -43,29 +45,34 @@ export default {
           const data = response.data;
           vm.text = data;
         } catch (jsonError) {
-          alert('解析 JSON 数据时出错:', jsonError);
+          console.log('解析 JSON 数据时出错:', jsonError);
         }
       } catch (axiosError) {
-        alert('请求数据时出错:', axiosError);
+        console.log('请求数据时出错:', axiosError);
       }
     });
   },
   data() {
     return {
       instrumentTitle: '',
-      instrumentLink:'',
+      instrumentLink: '',
       photo: '',
-      text: '',
+      text: '抱歉！该乐曲暂未收录！',
     }
   },
   beforeCreate() {
     this.savedPosition = this.$route.meta.savedPosition;
   },
+  computed: {
+		paragraphs() {
+			return this.text.replace(/\n/g, `\n       `);
+		},
+	},
   methods: {
     goBack() {
       this.$router.back();
     },
-  }
+  },
 
 }
 </script>
@@ -93,18 +100,15 @@ export default {
   cursor: pointer;
   width: 2vw;
 }
-.play{
-  position: absolute;
-  top: 25vw;
-  left: 60vw;
-  text-decoration: none;
-  color: coral;
-  transition: color 0.5s ease;
-  width: 10vw;
-  font-size: 2vw;
-}
-.play:hover {
-  color: chocolate;
 
+.play {
+  background-color: white;
+  position: relative;
+  top: 35vw;
+  left: 20vw;
+  text-decoration: none;
+  transition: color 0.5s ease;
+  width: 20vw;
+  font-size: 2vw;
 }
 </style>
