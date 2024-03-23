@@ -10,19 +10,20 @@ import MyPoem from './components/MyPoem'
 import NewMusic from './components/NewMusic.vue'
 import InstrumentDetails from "@/components/InstrumentDetails.vue"
 import MusicionDetails from "@/components/MusicionDetails.vue"
-import MusicDetails from "@/components/MusicDetails.vue"
+import PoemDetails from "@/components/PoemDetails.vue";
 
 const routes = [
-  { path: '/', component: HomePage, meta: { keepAlive: true } },
-  { path: '/home', component: HomePage, meta: { keepAlive: true } },
-  { path: '/instrument', component: NewInstrument, meta: { keepAlive: true } },
-  { path: '/musician', component: NewMusician, meta: { keepAlive: true } },
-  { path: '/poem', component: MyPoem, meta: { keepAlive: true } },
-  { path: '/music', component: NewMusic, meta: { keepAlive: true } },
-  { path: '/instrumentdetails', name: "InstrumentDetails", component: InstrumentDetails, meta: { keepAlive: false } },
-  { path: '/musiciondetails', name: "MusicionDetails", component: MusicionDetails, meta: { keepAlive: false } },
-  { path: '/musicdetails', name: "MusicDetails", component: MusicDetails, meta: { keepAlive: false } }
-];
+  { path: '/', component: HomePage ,meta: { keepAlive: true },},
+  { path: '/home', component: HomePage, meta: { keepAlive: true }, },
+  { path: '/instrument', component: NewInstrument, meta: { keepAlive: true }, },
+  { path: '/musician', component: NewMusician, meta: { keepAlive: true }, },
+  { path: '/poem', component: MyPoem, meta: { keepAlive: true }, },
+  { path: '/music', component: NewMusic, meta: { keepAlive: true }, },
+  { path: '/instrumentdetails', name: "InstrumentDetails", component: InstrumentDetails, meta: { keepAlive: false }, },
+  { path: '/musiciondetails', name: "MusicionDetails", component: MusicionDetails, meta: { keepAlive: false }, },
+  { path: '/musicdetails', name: "MusicDetails", component: MusicDetails, meta: { keepAlive: false } },
+  { path: '/poemdetails', name: "PoemDetails", component: PoemDetails, meta: { keepAlive: false }, }
+]
 
 var position = { x: 0, y: 0 };
 
