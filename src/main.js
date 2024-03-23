@@ -10,6 +10,7 @@ import MyPoem from './components/MyPoem'
 import NewMusic from './components/NewMusic.vue'
 import InstrumentDetails from "@/components/InstrumentDetails.vue"
 import MusicionDetails from "@/components/MusicionDetails.vue"
+import MusicDetails from "@/components/MusicDetails.vue"
 import PoemDetails from "@/components/PoemDetails.vue";
 
 const routes = [
