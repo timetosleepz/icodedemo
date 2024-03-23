@@ -1,17 +1,12 @@
 <template>
-  <div id="poem">
-    <!-- todo：用v-for制作一个诗歌展示页 -->
-    <!-- 三点要求：1.表层按照即时设计里面做
-    2.点击诗歌进入诗歌详情页-->
-    <p>音乐之诗，如涓涓细流滋润心灵，其美在于能将无形的音符化为有形的情感。诗人用文字捕捉旋律的飘逸，描绘和声的色彩，让人们在字里行间感受音乐的魅力，仿佛听到了心灵的回响，沉醉于那无尽的和谐与美好。</p>
-    <p id="poem1"></p>
-    <p id="poem2"></p>
-    <p id="poem3"></p>
-    <p id="poem4"></p>
+  <div id="introduction">音乐之诗，如涓涓细流滋润心灵，其美在于能将无形的音符化为有形的情感。诗人用文字捕捉旋律的飘逸，描绘和声的色彩，让人们在字里行间感受音乐的魅力，仿佛听到了心灵的回响，沉醉于那无尽的和谐与美好。</div>
 
-
+  <div class="poem-container">
+    <div v-for="(item, index) in poems" :key="index" class="poem-card">
+      <div class="poem-title" @click="goToPD(item)" >{{ item.title }}</div>
+      <div class="poem-content" @click="goToPD(item)">{{ item.content }}</div>
+    </div>
   </div>
-
 </template>
 
 <script>
@@ -19,19 +14,81 @@ export default {
   name: 'MyPoem',
   data() {
     return {
+      poems: [
+        {title: '标题', content: '诗一内容...'},
+        {title: '标题', content: '诗二内容...'},
+        {title: '标题', content: '诗一内容...'},
+        {title: '标题', content: '诗二内容...'},
+        {title: '标题', content: '诗一内容...'},
+        {title: '标题', content: '诗二内容...'},
+        {title: '标题', content: '诗一内容...'},
+        {title: '标题', content: '诗二内容...'},
+        {title: '标题', content: '诗一内容...'},
+        {title: '标题', content: '诗二内容...'},
+        {title: '标题', content: '诗一内容...'},
+        {title: '标题', content: '诗二内容...'},
+        {title: '标题', content: '诗一内容...'},
+        {title: '标题', content: '诗二内容...'},
+        {title: '标题', content: '诗一内容...'},
+        {title: '标题', content: '诗二内容...'},
+        {title: '标题', content: '诗一内容...'},
+        {title: '标题', content: '诗二内容...'},
+        {title: '标题', content: '诗一内容...'},
+        {title: '标题', content: '诗二内容...'},
+      ]
     }
   },
-
+  methods: {
+    goToPD(poems) {
+      this.$router.push({
+        name: 'PoemDetails',
+        params: { poemId: poems.id },
+        query: {title: poems.title, content: poems.content}
+      });
+    },
+  }
 }
 </script>
 
 <style>
-p {
-  left: 181px;
-  font-size: 2.5vw;
-  color: rgba(51, 34, 23, 1);
-  text-align: center;
-  margin-top: 1vw;
-  z-index: 10;
+
+.poem-content {
+  position: absolute;
+  top: 100%;
+  left: -2vw;
+  right: -2vw;
+  bottom: -2vw;
+  padding: 4vw;
+  background: yellowgreen;
+  border-radius: 2.5vw;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow: auto;
+}
+.poem-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -10px;
+}
+.poem-container{
+  position: absolute;
+  top: 30vw;
+}
+.poem-card {
+  flex: 0 0 calc(50% - 4vw);
+  max-width: calc(50% - 4vw);
+  margin: 2vw;
+  padding: 2vw;
+  border-radius: 2.5vw;
+  background: rgba(215, 213, 188, 1);
+  box-sizing: border-box;
+  position: relative;
+
+}
+.poem-card:hover .poem-content {
+  top: 0;
+  opacity: 1;
 }
 </style>

@@ -10,6 +10,7 @@ import MyPoem from './components/MyPoem'
 import NewMusic from './components/NewMusic.vue'
 import InstrumentDetails from "@/components/InstrumentDetails.vue"
 import MusicionDetails from "@/components/MusicionDetails.vue"
+import PoemDetails from "@/components/PoemDetails.vue";
 
 const routes = [
   { path: '/', component: HomePage ,meta: { keepAlive: true },},
@@ -19,7 +20,8 @@ const routes = [
   { path: '/poem', component: MyPoem, meta: { keepAlive: true }, },
   { path: '/music', component: NewMusic, meta: { keepAlive: true }, },
   { path: '/instrumentdetails', name: "InstrumentDetails", component: InstrumentDetails, meta: { keepAlive: false }, },
-  { path: '/musiciondetails', name: "MusicionDetails", component: MusicionDetails, meta: { keepAlive: false }, }
+  { path: '/musiciondetails', name: "MusicionDetails", component: MusicionDetails, meta: { keepAlive: false }, },
+  { path: '/poemdetails', name: "PoemDetails", component: PoemDetails, meta: { keepAlive: false }, }
 ]
 
 var position = { x: 0, y: 0 }
@@ -28,16 +30,12 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    if (to.path === from.path) {
-      return savedPosition;
-    }
-  
     return new Promise((resolve) => {
       setTimeout(() => {
-        if(!to.meta.keepAlive){
+        if(!to.meta.keepAlive){//去到详情页时
           position = savedPosition;
           return resolve({top: 0});
-        } else if(!from.meta.keepAlive){
+        } else if(!from.meta.keepAlive){//从详情页返回时
           return resolve(position);
         } else {
           return resolve({top: 0});
