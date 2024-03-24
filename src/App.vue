@@ -1,6 +1,6 @@
 <template id="app">
 	<MyNavigation />
-	<router-view v-slot="{ Component }">
+	<router-view v-slot="{ Component }" :key="key">
 		<transition name="fade" mode="out-in">
 			<keep-alive>
 				<component :is="Component" />

@@ -1,25 +1,20 @@
 <template>
-    <div>
-      <!-- todo：用v-for制作一个展示音乐页 -->
-      <!-- 三点要求：1.表层按照即时设计里面做
-      2.点击音乐进入音乐介绍和播放页-->
+  <div>
+    <p id="introduction">中国传统音乐，又称为国乐，是中国几千年文化积淀的重要组成部分。\n中国传统音乐的旋律优美，节奏韵律丰富，富有深厚的文化内涵和艺术魅力。
+    </p>
+  </div>
+</template>
 
-    </div>
-  </template>
-
-  <script>
-  export default {
-    name: 'NewMusic',
-    data() {
-      return {
-        
-      }
+<script>
+export default {
+  name: 'NewMusic',
+  data() {
+    return {
+      
     }
-
   }
-  </script>
-  
-  <style>
 
+}
+</script>
 
-  </style>
+<style></style>
