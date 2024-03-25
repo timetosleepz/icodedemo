@@ -1,10 +1,15 @@
 <template>
-  <div id="introduction">音乐之诗，如涓涓细流滋润心灵，其美在于能将无形的音符化为有形的情感。诗人用文字捕捉旋律的飘逸，描绘和声的色彩，让人们在字里行间感受音乐的魅力，仿佛听到了心灵的回响，沉醉于那无尽的和谐与美好。</div>
+  <div>
+    <div style="display: flex;justify-content: center;margin-bottom: 10px;">
+      <p id="introduction">
+        音乐之诗，如涓涓细流滋润心灵，其美在于能将无形的音符化为有形的情感。诗人用文字捕捉旋律的飘逸，描绘和声的色彩，让人们在字里行间感受音乐的魅力，仿佛听到了心灵的回响，沉醉于那无尽的和谐与美好。</p>
+    </div>
 
-  <div class="poem-container">
-    <div v-for="(item, index) in poems" :key="index" class="poem-card">
-      <div class="poem-title" @click="goToPD(item)" >{{ item.title }}</div>
-      <div class="poem-content" @click="goToPD(item)">{{ item.content }}</div>
+    <div class="poem-container">
+      <div v-for="(item, index) in poems" :key="index" class="poem-card">
+        <div class="poem-title" @click="goToPD(item)">{{ item.title }}</div>
+        <div class="poem-content" @click="goToPD(item)">{{ item.content }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -15,26 +20,26 @@ export default {
   data() {
     return {
       poems: [
-        {title: '标题', content: '诗一内容...'},
-        {title: '标题', content: '诗二内容...'},
-        {title: '标题', content: '诗一内容...'},
-        {title: '标题', content: '诗二内容...'},
-        {title: '标题', content: '诗一内容...'},
-        {title: '标题', content: '诗二内容...'},
-        {title: '标题', content: '诗一内容...'},
-        {title: '标题', content: '诗二内容...'},
-        {title: '标题', content: '诗一内容...'},
-        {title: '标题', content: '诗二内容...'},
-        {title: '标题', content: '诗一内容...'},
-        {title: '标题', content: '诗二内容...'},
-        {title: '标题', content: '诗一内容...'},
-        {title: '标题', content: '诗二内容...'},
-        {title: '标题', content: '诗一内容...'},
-        {title: '标题', content: '诗二内容...'},
-        {title: '标题', content: '诗一内容...'},
-        {title: '标题', content: '诗二内容...'},
-        {title: '标题', content: '诗一内容...'},
-        {title: '标题', content: '诗二内容...'},
+        { title: '标题', content: '诗一内容...' },
+        { title: '标题', content: '诗二内容...' },
+        { title: '标题', content: '诗一内容...' },
+        { title: '标题', content: '诗二内容...' },
+        { title: '标题', content: '诗一内容...' },
+        { title: '标题', content: '诗二内容...' },
+        { title: '标题', content: '诗一内容...' },
+        { title: '标题', content: '诗二内容...' },
+        { title: '标题', content: '诗一内容...' },
+        { title: '标题', content: '诗二内容...' },
+        { title: '标题', content: '诗一内容...' },
+        { title: '标题', content: '诗二内容...' },
+        { title: '标题', content: '诗一内容...' },
+        { title: '标题', content: '诗二内容...' },
+        { title: '标题', content: '诗一内容...' },
+        { title: '标题', content: '诗二内容...' },
+        { title: '标题', content: '诗一内容...' },
+        { title: '标题', content: '诗二内容...' },
+        { title: '标题', content: '诗一内容...' },
+        { title: '标题', content: '诗二内容...' },
       ]
     }
   },
@@ -43,7 +48,7 @@ export default {
       this.$router.push({
         name: 'PoemDetails',
         params: { poemId: poems.id },
-        query: {title: poems.title, content: poems.content}
+        query: { title: poems.title, content: poems.content }
       });
     },
   }
@@ -51,7 +56,6 @@ export default {
 </script>
 
 <style>
-
 .poem-content {
   position: absolute;
   top: 100%;
@@ -66,16 +70,19 @@ export default {
   transition: opacity 0.3s ease;
   overflow: auto;
 }
+
 .poem-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: -10px;
 }
-.poem-container{
+
+.poem-container {
   position: absolute;
   top: 30vw;
 }
+
 .poem-card {
   flex: 0 0 calc(50% - 4vw);
   max-width: calc(50% - 4vw);
@@ -87,6 +94,7 @@ export default {
   position: relative;
 
 }
+
 .poem-card:hover .poem-content {
   top: 0;
   opacity: 1;

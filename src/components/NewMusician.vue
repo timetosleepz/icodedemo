@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div style="display: flex;justify-content: center;margin-bottom:10px">
       <!-- todo：用v-for制作一个音乐人展示页 -->
       <!-- 三点要求：1.表层按照即时设计里面做
     2.点击音乐人进入音乐人详情页
@@ -73,17 +73,6 @@ export default {
 </script>
 
 <style>
-#musician {
-  margin-top: 25vw;
-}
-#introduction {
-  position: absolute;
-  top: 8vw;
-  width: 80vw;
-  height: 18vw;
-  text-align: center;
-
-}
 
 .image-row {
   display: grid;

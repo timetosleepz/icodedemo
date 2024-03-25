@@ -32,11 +32,10 @@ export default {
   },
   methods: {
     goBack() {
-      window.history.back();
+      this.$router.back();
     }
   }
 }
-
 
 
 </script>

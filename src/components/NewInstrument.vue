@@ -1,7 +1,6 @@
 <template>
   <div>
-    <NewSearch v-model:message="newmessage"></NewSearch>
-    <div>
+    <div style="display: flex;justify-content: center;margin-bottom: 10px;">
       <!-- todo：用v-for制作一个乐器展示页 -->
       <!-- 三点要求：1.表层按照即时设计里面做
     2.点击乐器进入乐器详情页
@@ -67,10 +66,8 @@
 </template>
 
 <script>
-import NewSearch from './NewSearch'
 
 export default {
-  components: { NewSearch },
   data() {
     return {
       newmessage: '',
@@ -144,7 +141,6 @@ export default {
   justify-content: space-around;
   align-items: center;
   background-color: rgba(215, 213, 188, 1);
-  margin-top: 25vw;
   width: 100%;
   height: 10vw;
   font-size: 40px;

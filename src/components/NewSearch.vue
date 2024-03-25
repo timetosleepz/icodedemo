@@ -1,20 +1,21 @@
+// eslint-disable-next-line vue/no-unused-components
 <template>
-	<input type="text" :value="message" @input="$emit('update:message', $event.target.value)">
+	<div>
+		<input type="text" v-model="searchText" @input="onInput" />
+	</div>
 </template>
 
 <script>
 export default {
-	props: ['message']
-}
+	data() {
+		return {
+			searchText: '',
+		};
+	},
+	methods: {
+		onInput() {
+			this.$emit('input', this.searchText);
+		},
+	},
+};
 </script>
-
-<style>
-/* 搜索栏样式 */
-input {
-	width: 20px;
-	height: 5px;
-	border-radius: 1px;
-	color: white;
-	background-color: #4CAF50;
-}
-</style>
