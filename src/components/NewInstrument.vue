@@ -124,6 +124,7 @@ export default {
 <style>
 
 #introduction {
+  margin-top: 50px;
   overflow: visible;
   max-height: 20vw;
   text-align: center;
