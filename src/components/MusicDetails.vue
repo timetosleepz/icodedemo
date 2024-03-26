@@ -2,12 +2,10 @@
   <div id="details">
     <div>
       <img src="@/assets/img/唱片.png" class="instru" :class="isPlaying ? 'animation2' : 'animation1'" />
-      <h1 class="name">音乐标题</h1>
+      <h1 class="name">{{ musicTitle }}</h1>
       <audio ref="audioRef" :src="musiclink" controls="controls" @play="handlePlay"
         @pause="handlePause">抱歉，音乐加载错误！</audio>
     </div>
-
-
 
     <svg class="back-button" @click="goBack" width="66" height="66" viewBox="0 0 1024 1024" version="1.1"
       xmlns="http://www.w3.org/2000/svg">
@@ -33,12 +31,13 @@ export default {
     next(vm => {
       setTimeout(() => {
         vm.$refs.audioRef.play();
-      }, 2500); // 延迟 3 秒
+      }, 2500); 
     });
     next(async vm => {
       const title = to.query.title;
       if (title) {
         vm.musictTitle = title;
+        alert('音乐名称：' + title);
       }
       try {
         const response = await axios.get(vm.action + '/music/' + title);

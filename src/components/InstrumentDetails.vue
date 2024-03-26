@@ -5,7 +5,7 @@
       <h1 class="name">{{ instrumentTitle }}</h1>
     </div>
     <div class="play">
-      <p>{{ paragraphs }}</p>
+      {{ paragraphs }}
     </div>
 
     <svg class="back-button" @click="goBack" width="66" height="66" viewBox="0 0 1024 1024" version="1.1"
@@ -66,7 +66,6 @@ export default {
   },
   computed: {
     paragraphs() { 
-
       return this.text.replace(/\\n/g, '\n        ');
     },
   },
@@ -112,8 +111,17 @@ export default {
   position: relative;
   top: 35vw;
   transition: color 0.5s ease;
-  width: 70vw;
   font-size: 2vw;
   text-indent: 2em;
+  line-height: 1.5;
+	margin: 2% 4%;
+	scrollbar-width: none;
+	box-sizing: border-box;
+	letter-spacing: 0.05em;
+  text-align: left;
+  white-space: pre-wrap;
+}
+.spacer {
+  height: 10vw;
 }
 </style>
