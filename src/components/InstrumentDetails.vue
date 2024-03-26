@@ -43,6 +43,7 @@ export default {
         const response = await axios.get(vm.action + '/instrument/' + title);
         try {
           const data = response.data;
+          if (data.includes('\n'))alert('该乐曲暂未收录！');
           vm.text = data;
         } catch (jsonError) {
           console.log('解析 JSON 数据时出错:', jsonError);
@@ -64,10 +65,11 @@ export default {
     this.savedPosition = this.$route.meta.savedPosition;
   },
   computed: {
-		paragraphs() {
-			return this.text.replace(/\n/g, `\n       `);
-		},
-	},
+    paragraphs() {
+
+      return this.text.replace('\n', '<br>');
+    },
+  },
   methods: {
     goBack() {
       this.$router.back();
@@ -102,13 +104,13 @@ export default {
 }
 
 .play {
-  background-color: white;
   position: relative;
   top: 35vw;
   left: 20vw;
   text-decoration: none;
   transition: color 0.5s ease;
-  width: 20vw;
+  width: 70vw;
   font-size: 2vw;
+  text-indent: 2em;
 }
 </style>
