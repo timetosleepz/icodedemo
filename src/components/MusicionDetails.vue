@@ -50,7 +50,11 @@ export default {
     });
   },
   data() {
-    return {}
+    return {
+      musicionTitle: '接收不到数据',
+      photo: '',
+      text: ''
+    }
   },
   beforeCreate() {
     this.savedPosition = this.$route.meta.savedPosition;

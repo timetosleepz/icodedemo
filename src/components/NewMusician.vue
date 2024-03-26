@@ -9,7 +9,7 @@
       <p id="introduction">中华传统音乐家，是中华文化的璀璨星辰，他们承载了深厚的历史底蕴与浓烈的民族情感，以精湛的技艺和独特的风格，为中华文化的传承与发展作出了杰出贡献。</p>
     </div>
     <div id="musician">
-      <div class="image-row">
+      <div>
         <div v-for="(item, index) in musicians" :key="index" class="musician-item">
           <img :src="item.src" :alt="item.alt" class="musician-image" @click="goToNewMusicion(item)">
           <div class="musician-name" @click="goToNewMusicion(item)">{{ item.title }}</div>
@@ -26,36 +26,26 @@ export default {
   name: 'NewMusician',
   data() {
     return {
-      musicians: [{ src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 1', title: '图片1描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 2', title: '图片2描述' },
-      { src: require('@/assets/img/background.png'), alt: 'Image 3', title: '图片3描述' },
+      musicians: [{ src: require('@/assets/musician/师旷.jpg'), alt: '师旷', title: '师旷' },
+      { src: require('@/assets/musician/伯牙.jpg'), alt: '伯牙', title: '伯牙' },
+      { src: require('@/assets/musician/李延年.jpg'), alt: '李延年', title: '李延年' },
+      { src: require('@/assets/musician/嵇康.jpg'), alt: '嵇康', title: '嵇康' },
+      { src: require('@/assets/musician/苏袛婆.jpg'), alt: '苏袛婆', title: '苏袛婆' },
+      { src: require('@/assets/musician/万宝常.jpg'), alt: '万宝常', title: '万宝常' },
+      { src: require('@/assets/musician/李隆基.jpg'), alt: '李隆基', title: '李隆基' },
+      { src: require('@/assets/musician/李龟年.jpg'), alt: '李龟年', title: '李龟年' },
+      { src: require('@/assets/musician/姜夔.jpg'), alt: '姜夔', title: '姜夔' },
+      { src: require('@/assets/musician/朱载堉.jpg'), alt: '朱载堉', title: '朱载堉' },
+      { src: require('@/assets/musician/张孔山.jpg'), alt: '张孔山', title: '张孔山' },
+      { src: require('@/assets/musician/王玉峰.jpg'), alt: '王玉峰', title: '王玉峰' },
+      { src: require('@/assets/musician/白居易.jpg'), alt: '白居易', title: '白居易' },
+      { src: require('@/assets/musician/董庭兰.jpg'), alt: '董庭兰', title: '董庭兰' },
+      { src: require('@/assets/musician/段善本.jpg'), alt: '段善本', title: '段善本'},
+      { src: require('@/assets/musician/雷海青.jpg'), alt: '雷海青', title: '雷海青'},
+      { src: require('@/assets/musician/阮籍.jpg'), alt: '阮籍', title: '阮籍'},
+      { src: require('@/assets/musician/孔子.jpg'), alt: '孔子', title: '孔子'}
+
+
       ]
     }
   },
@@ -73,33 +63,29 @@ export default {
 </script>
 
 <style>
+#musician {
+  column-count: 3;
+  column-gap: 1rem;
+  padding: 1rem;
+}
 
 .image-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* 一行显示三个 */
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   /* 间隙大小 */
-  padding-left: 5rem;
-  /* 向右平移的距离 */
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
 }
 
 .musician-item {
-  flex: 1 0 33.33%;
-  /* 每张图片占容器的1/3 */
-  width: 24vw;
-  /* 每张图片占容器的1/3 */
-  margin-bottom: 5vw;
-  /* 在图片和小标题之间添加一些间距 */
-  background-color: rgba(204, 204, 204, 0);
-  /* 设置圆角容器背景颜色 */
-  overflow: hidden;
-  height: 24vw;
-  opacity: 1;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1rem;
+  break-inside: avoid;
 }
 
 .flex-item img {
-  width: 90%;
+  width: 100%;
   height: auto;
   border-radius: 20px;
 }
@@ -115,15 +101,9 @@ export default {
 }
 
 .musician-image {
-  border-radius: 0.5rem;
-  /* 圆角大小 */
-  overflow: hidden;
-  /* 确保圆角有效 */
   width: 100%;
-  /* 图片宽度调整为100%，以适应容器 */
   height: auto;
-  /* 保持图片的宽高比 */
   object-fit: cover;
-  /* 裁剪图片以覆盖整个容器 */
+  border-radius: 4%;
 }
 </style>

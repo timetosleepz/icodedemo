@@ -124,6 +124,7 @@ export default {
 <style>
 
 #introduction {
+  margin-top: 50px;
   overflow: visible;
   max-height: 20vw;
   text-align: center;
@@ -177,8 +178,6 @@ nav a {
   background-color: rgba(204, 204, 204, 0);
   /* 设置圆角容器背景颜色 */
   overflow: hidden;
-  opacity: 1;
-  position: relative;
   height: auto;
 }
 

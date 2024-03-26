@@ -56,43 +56,22 @@ export default {
 </script>
 
 <style>
-.poem-content {
-  position: absolute;
-  top: 100%;
-  left: -2vw;
-  right: -2vw;
-  bottom: -2vw;
-  padding: 4vw;
-  background: yellowgreen;
-  border-radius: 2.5vw;
-  box-sizing: border-box;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  overflow: auto;
-}
+
 
 .poem-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: -10px;
 }
 
-.poem-container {
-  position: absolute;
-  top: 30vw;
-}
 
 .poem-card {
-  flex: 0 0 calc(50% - 4vw);
+  width: 30%;
   max-width: calc(50% - 4vw);
   margin: 2vw;
   padding: 2vw;
-  border-radius: 2.5vw;
+  border-radius: 5%;
   background: rgba(215, 213, 188, 1);
-  box-sizing: border-box;
-  position: relative;
-
 }
 
 .poem-card:hover .poem-content {
