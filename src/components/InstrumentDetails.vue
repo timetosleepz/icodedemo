@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div id="instrumentdetail">
     <div>
       <img class="instru" :src="photo" alt="instrument">
       <h1 class="name">{{ instrumentTitle }}</h1>
     </div>
     <div class="play">
-      <h5>{{ paragraphs }}</h5>
+      <p>{{ paragraphs }}</p>
     </div>
 
     <svg class="back-button" @click="goBack" width="66" height="66" viewBox="0 0 1024 1024" version="1.1"
@@ -41,9 +41,9 @@ export default {
       }
       try {
         const response = await axios.get(vm.action + '/instrument/' + title);
+        console.log('response:', response);
         try {
           const data = response.data;
-          if (data.includes('\n'))alert('该乐曲暂未收录！');
           vm.text = data;
         } catch (jsonError) {
           console.log('解析 JSON 数据时出错:', jsonError);
@@ -65,9 +65,9 @@ export default {
     this.savedPosition = this.$route.meta.savedPosition;
   },
   computed: {
-    paragraphs() {
+    paragraphs() { 
 
-      return this.text.replace('\n', '<br>');
+      return this.text.replace(/\\n/g, '\n        ');
     },
   },
   methods: {
@@ -80,6 +80,11 @@ export default {
 </script>
 
 <style>
+
+#instrumentdetail {
+  display: flex;
+  justify-content: center;
+}
 .instru {
   position: absolute;
   height: 20vw;
@@ -106,8 +111,6 @@ export default {
 .play {
   position: relative;
   top: 35vw;
-  left: 20vw;
-  text-decoration: none;
   transition: color 0.5s ease;
   width: 70vw;
   font-size: 2vw;
