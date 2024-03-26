@@ -28,16 +28,13 @@ export default {
     return { action };
   },
   beforeRouteEnter(to, from, next) {
-    next(vm => {
+    next(async vm => {
       setTimeout(() => {
         vm.$refs.audioRef.play();
-      }, 2500); 
-    });
-    next(async vm => {
+      }, 2500);
       const title = to.query.title;
       if (title) {
-        vm.musictTitle = title;
-        alert('音乐名称：' + title);
+        vm.musicTitle = title;
       }
       try {
         const response = await axios.get(vm.action + '/music/' + title);
@@ -56,7 +53,7 @@ export default {
   },
   data() {
     return {
-      musicTitle: '',
+      musicTitle: '乐曲未收录',
       musiclink: 'http://music.163.com/song/media/outer/url?id=303421.mp3',
       text: '',
       isPlaying: false,
@@ -87,7 +84,6 @@ export default {
 </script>
 
 <style>
-
 .name {
   position: absolute;
   top: 10vw;

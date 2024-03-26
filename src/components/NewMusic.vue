@@ -46,7 +46,6 @@ export default {
   },
   methods: {
     goToMusic(music) {
-
       this.$router.push({
         name: 'MusicDetails',
         params: { musicId: music.id },
