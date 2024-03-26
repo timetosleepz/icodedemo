@@ -35,6 +35,7 @@ export default {
       const title = to.query.title;
       if (title) {
         vm.musicTitle = title;
+        vm.musictTitle = title;
       }
       try {
         const response = await axios.get(vm.action + '/music/' + title);
