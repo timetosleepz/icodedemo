@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="poemcontainer">
-      <h1 id="poemname">{{ poemTitle }}</h1>
-      <p id="poemcontent">{{ poemContent }}</p>
+      <h1 id="poemname">标题</h1>
+      <p id="poemcontent">内容\\n暖</p>
     </div>
 
     <svg class="back-button" @click="goBack" width="66" height="66" viewBox="0 0 1024 1024" version="1.1"
@@ -15,18 +15,45 @@
 </template>
 
 <script>
-
+import axios from 'axios';
+import { ref, inject } from 'vue';
 
 export default {
   name: 'PoemDetails',
+  setup() {
+    const getAction = inject('getAction');
+    const action = ref(getAction);
+    return { action };
+  },
   data() {
     return {
       poemTitle: '',
       poemContent: ''
     };
   },
+  beforeRouteEnter(to, from, next) {
+    next(async vm => {
+      const title = to.query.title;
+      if (title) {
+        vm.musicTitle = title;
+      }
+      try {
+        const response = await axios.get(vm.action + '/music/' + title);
+        try {
+          const data = response.data.introduction;
+          vm.text = data;
+          const link = response.data.name;
+          vm.musiclink = link;
+          alert(link)
+        } catch (jsonError) {
+          console.log('解析 JSON 数据时出错:', jsonError);
+        }
+      } catch (axiosError) {
+        console.log('请求数据时出错:', axiosError);
+      }
+    });
+  },
   mounted() {
-
     this.poemTitle = this.$route.query.title;
     this.poemContent = this.$route.query.content;
   },
@@ -55,6 +82,8 @@ export default {
 
 #poemcontent {
   text-align: center;
+  font-size: 30px;
+  white-space: pre-wrap;
 }
 
 

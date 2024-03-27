@@ -6,7 +6,7 @@
     </div>
 
     <div class="poem-container">
-      <div v-for="(item, index) in poems" :key="index" class="poem-card">
+      <div v-for="(item, index) in poems" :key="index" class="poem-card" @mouseover="handleMouseOver(item)">
         <div class="poem-title" @click="goToPD(item)">{{ item.title }}</div>
         <div class="poem-content" @click="goToPD(item)">{{ item.content }}</div>
       </div>
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { ref,inject } from 'vue';
 export default {
   name: 'MyPoem',
   data() {
@@ -43,7 +45,30 @@ export default {
       ]
     }
   },
+  setup() {
+    const getAction = inject('getAction');
+    const action = ref(getAction);
+    return { action };
+  },
   methods: {
+    handleMouseOver(item) {
+      const title = item.title;
+      try {
+        const response = axios.get(vm.action + '/poem/' + title);
+        try {
+          const data = response.data.introduction;
+          vm.text = data;
+          const introduction = response.data.name;
+          vm.introduction = introduction;
+          const poet = response.data.instrument;
+          vm.poet = poet;
+        } catch (jsonError) {
+          console.log('解析 JSON 数据时出错:', jsonError);
+        }
+      } catch (axiosError) {
+        console.log('请求数据时出错:', axiosError);
+      }
+    },
     goToPD(poems) {
       this.$router.push({
         name: 'PoemDetails',
