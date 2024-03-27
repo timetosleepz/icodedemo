@@ -15,7 +15,7 @@
     </svg>
     <div class="play">
       {{ paragraphs }}<br><br>
-      用到的乐器：{{ work }}
+      演奏的乐器有：{{ work }}
     </div>
   </div>
 </template>
@@ -58,7 +58,7 @@ export default {
     return {
       musicTitle: '乐曲未收录',
       musiclink: 'http://music.163.com/song/media/outer/url?id=303421.mp3',
-      text: '',
+      text: '暂无简介',
       isPlaying: false,
       work: ''
     }
