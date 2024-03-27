@@ -20,26 +20,26 @@ export default {
   data() {
     return {
       poems: [
-        { title: '标题', content: '诗一内容...' },
-        { title: '标题', content: '诗二内容...' },
-        { title: '标题', content: '诗一内容...' },
-        { title: '标题', content: '诗二内容...' },
-        { title: '标题', content: '诗一内容...' },
-        { title: '标题', content: '诗二内容...' },
-        { title: '标题', content: '诗一内容...' },
-        { title: '标题', content: '诗二内容...' },
-        { title: '标题', content: '诗一内容...' },
-        { title: '标题', content: '诗二内容...' },
-        { title: '标题', content: '诗一内容...' },
-        { title: '标题', content: '诗二内容...' },
-        { title: '标题', content: '诗一内容...' },
-        { title: '标题', content: '诗二内容...' },
-        { title: '标题', content: '诗一内容...' },
-        { title: '标题', content: '诗二内容...' },
-        { title: '标题', content: '诗一内容...' },
-        { title: '标题', content: '诗二内容...' },
-        { title: '标题', content: '诗一内容...' },
-        { title: '标题', content: '诗二内容...' },
+        { title: '李凭箜篌引', content: '诗一内容...' },
+        { title: '听弹琴', content: '诗二内容...' },
+        { title: '省试湘灵鼓瑟', content: '诗一内容...' },
+        { title: '观胡人吹笛', content: '诗二内容...' },
+        { title: '和王七玉门关听吹笛', content: '诗一内容...' },
+        { title: '春夜洛阳城闻笛', content: '诗二内容...' },
+        { title: '木兰花·晚妆初了明肌雪', content: '诗一内容...' },
+        { title: '菩萨蛮·哀筝一弄湘江曲', content: '诗二内容...' },
+        { title: '听筝', content: '诗一内容...' },
+        { title: '夜坐吟', content: '诗二内容...' },
+        { title: '听蜀僧浚弹琴', content: '诗一内容...' },
+        { title: '赋得长洲苑送李惠', content: '诗二内容...' },
+        { title: '夜泊黄山闻殷十四吴吟', content: '诗一内容...' },
+        { title: '伯牙', content: '诗二内容...' },
+        { title: '喜张濆及第', content: '诗一内容...' },
+        { title: '江亭晚望', content: '诗二内容...' },
+        { title: '送郑州周司空', content: '诗一内容...' },
+        { title: '关山月', content: '诗二内容...' },
+        { title: '听邻家吹笙', content: '诗一内容...' },
+        { title: '春夜闻笛', content: '诗二内容...' },
       ]
     }
   },
@@ -56,22 +56,43 @@ export default {
 </script>
 
 <style>
-
+.poem-content {
+  position: absolute;
+  top: 100%;
+  left: -2vw;
+  right: -2vw;
+  bottom: -2vw;
+  padding: 4vw;
+  background: #97CADB;
+  border-radius: 2.5vw;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow: auto;
+}
 
 .poem-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: -10px;
 }
 
+.poem-container {
+  position: absolute;
+  top: 30vw;
+}
 
 .poem-card {
-  width: 30%;
+  flex: 0 0 calc(50% - 4vw);
   max-width: calc(50% - 4vw);
   margin: 2vw;
   padding: 2vw;
-  border-radius: 5%;
-  background: rgba(215, 213, 188, 1);
+  border-radius: 2.5vw;
+  background: #D6E8EE;
+  box-sizing: border-box;
+  position: relative;
+
 }
 
 .poem-card:hover .poem-content {
