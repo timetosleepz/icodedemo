@@ -17,10 +17,6 @@
 <script>
 import axios from 'axios';
 import { ref, inject } from 'vue';
-import { ref, inject } from 'vue';
-import axios from 'axios';
-
-
 export default {
   name: 'PoemDetails',
   setup() {
