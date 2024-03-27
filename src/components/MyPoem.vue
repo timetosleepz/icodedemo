@@ -6,9 +6,11 @@
     </div>
 
     <div class="poem-container">
-      <div v-for="(item, index) in poems" :key="index" class="poem-card" @mouseover="handleMouseOver(item)">
-        <div class="poem-title" @click="goToPD(item)">{{ item.title }}</div>
-        <div class="poem-content" @click="goToPD(item)">{{ item.content }}</div>
+      <div v-for="(item, index) in poems" :key="index" class="poem-card" @mouseover="handleMouseOver(item,index)" @mouseleave="handleMouseLeave">
+        <div class="poem-title" @click="goToPD(item)">
+          <span v-if="hoveredIndex === index">{{ content }}</span>
+          <span v-else>{{ item.title }}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -16,11 +18,13 @@
 
 <script>
 import axios from 'axios';
-import { ref,inject } from 'vue';
+import { ref, inject } from 'vue';
 export default {
   name: 'MyPoem',
   data() {
     return {
+      content: '加载中',
+      hoveredIndex: null,
       poems: [
         { title: '标题', content: '诗一内容...' },
         { title: '标题', content: '诗二内容...' },
@@ -51,23 +55,24 @@ export default {
     return { action };
   },
   methods: {
-    handleMouseOver(item) {
+    handleMouseOver(item,index) {
+      this.hoveredIndex = index;
       const title = item.title;
-      try {
-        const response = axios.get(vm.action + '/poem/' + title);
-        try {
-          const data = response.data.introduction;
-          vm.text = data;
-          const introduction = response.data.name;
-          vm.introduction = introduction;
-          const poet = response.data.instrument;
-          vm.poet = poet;
-        } catch (jsonError) {
-          console.log('解析 JSON 数据时出错:', jsonError);
-        }
-      } catch (axiosError) {
-        console.log('请求数据时出错:', axiosError);
-      }
+      axios.get(this.action + '/poem/' + title)
+        .then(response => {
+          try {
+            const data = response.data.introduction;
+            this.content = data;
+          } catch (jsonError) {
+            console.log('解析 JSON 数据时出错:', jsonError);
+          }
+        })
+        .catch(axiosError => {
+          console.log('请求数据时出错:', axiosError);
+        });
+    },
+    handleMouseLeave() {
+      this.hoveredIndex = null;
     },
     goToPD(poems) {
       this.$router.push({
@@ -81,8 +86,6 @@ export default {
 </script>
 
 <style>
-
-
 .poem-container {
   display: flex;
   flex-wrap: wrap;

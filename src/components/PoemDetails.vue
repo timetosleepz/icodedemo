@@ -1,8 +1,16 @@
 <template>
   <div>
     <div class="poemcontainer">
-      <h1 id="poemname">标题</h1>
-      <p id="poemcontent">内容\\n暖</p>
+      <h1 id="poemname">{{ poemTitle }}</h1>
+      <p>
+        作者：{{ poet }}<br>
+      </p>
+      <p id="poemcontent">
+        内容：{{ text }}<br><br>
+      </p>
+      <p id="background">
+        背景：{{ background }}<br>
+      </p>
     </div>
 
     <svg class="back-button" @click="goBack" width="66" height="66" viewBox="0 0 1024 1024" version="1.1"
@@ -26,24 +34,27 @@ export default {
   },
   data() {
     return {
-      poemTitle: '',
-      poemContent: ''
+      poemTitle: '加载中...',
+      text: '加载中',
+      background: '',
+      poet: '未知',
     };
   },
   beforeRouteEnter(to, from, next) {
     next(async vm => {
       const title = to.query.title;
       if (title) {
-        vm.musicTitle = title;
+        vm.poemTitle = title;
       }
       try {
-        const response = await axios.get(vm.action + '/music/' + title);
+        const response = await axios.get(vm.action + '/poem/' + title);
         try {
           const data = response.data.introduction;
           vm.text = data;
-          const link = response.data.name;
-          vm.musiclink = link;
-          alert(link)
+          const background = response.data.background;
+          vm.background = background;
+          const poet = response.data.name;
+          vm.poet = poet;
         } catch (jsonError) {
           console.log('解析 JSON 数据时出错:', jsonError);
         }
@@ -52,15 +63,12 @@ export default {
       }
     });
   },
-  mounted() {
-    this.poemTitle = this.$route.query.title;
-    this.poemContent = this.$route.query.content;
-  },
   methods: {
     goBack() {
       this.$router.back();
     }
-  }
+  },
+  
 }
 
 
@@ -81,6 +89,12 @@ export default {
 
 #poemcontent {
   text-align: center;
+  font-size: 30px;
+  white-space: pre-wrap;
+}
+
+#background {
+  text-align: left;
   font-size: 30px;
   white-space: pre-wrap;
 }
