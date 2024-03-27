@@ -6,19 +6,25 @@
     </div>
 
     <div class="poem-container">
-      <div v-for="(item, index) in poems" :key="index" class="poem-card">
-        <div class="poem-title" @click="goToPD(item)">{{ item.title }}</div>
-        <div class="poem-content" @click="goToPD(item)">{{ item.content }}</div>
+      <div v-for="(item, index) in poems" :key="index" class="poem-card" @mouseover="handleMouseOver(item,index)" @mouseleave="handleMouseLeave">
+        <div class="poem-title" @click="goToPD(item)">
+          <span v-if="hoveredIndex === index">{{ content }}</span>
+          <span v-else>{{ item.title }}</span>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+import { ref, inject } from 'vue';
 export default {
   name: 'MyPoem',
   data() {
     return {
+      content: '加载中',
+      hoveredIndex: null,
       poems: [
         { title: '李凭箜篌引', content: '诗一内容...' },
         { title: '听弹琴', content: '诗二内容...' },
@@ -43,7 +49,31 @@ export default {
       ]
     }
   },
+  setup() {
+    const getAction = inject('getAction');
+    const action = ref(getAction);
+    return { action };
+  },
   methods: {
+    handleMouseOver(item,index) {
+      this.hoveredIndex = index;
+      const title = item.title;
+      axios.get(this.action + '/poem/' + title)
+        .then(response => {
+          try {
+            const data = response.data.introduction;
+            this.content = data;
+          } catch (jsonError) {
+            console.log('解析 JSON 数据时出错:', jsonError);
+          }
+        })
+        .catch(axiosError => {
+          console.log('请求数据时出错:', axiosError);
+        });
+    },
+    handleMouseLeave() {
+      this.hoveredIndex = null;
+    },
     goToPD(poems) {
       this.$router.push({
         name: 'PoemDetails',
@@ -56,6 +86,7 @@ export default {
 </script>
 
 <style>
+<<<<<<< HEAD
 .poem-content {
   position: absolute;
   top: 100%;
@@ -71,6 +102,8 @@ export default {
   overflow: auto;
 }
 
+=======
+>>>>>>> bd91e3ac3c097b67c7dcb261d9b94b81848c4c5f
 .poem-container {
   display: flex;
   flex-wrap: wrap;

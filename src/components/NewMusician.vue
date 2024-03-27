@@ -44,18 +44,15 @@ export default {
       { src: require('@/assets/musician/雷海青.jpg'), alt: '雷海青', title: '雷海青'},
       { src: require('@/assets/musician/阮籍.jpg'), alt: '阮籍', title: '阮籍'},
       { src: require('@/assets/musician/孔子.jpg'), alt: '孔子', title: '孔子'}
-
-
       ]
     }
   },
   methods: {
     goToNewMusicion(musicion) {
-
       this.$router.push({
         name: 'MusicionDetails',
         params: { musicionId: musicion.id },
-        query: { title: musicion.title }
+        query: { title: musicion.title, photo: musicion.src }
       });
     }
   }

@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div id="instrumentdetail">
     <div>
       <img class="instru" :src="photo" alt="instrument">
       <h1 class="name">{{ instrumentTitle }}</h1>
     </div>
     <div class="play">
-      <h5>{{ paragraphs }}</h5>
+      {{ paragraphs }}
     </div>
 
     <svg class="back-button" @click="goBack" width="66" height="66" viewBox="0 0 1024 1024" version="1.1"
@@ -41,6 +41,7 @@ export default {
       }
       try {
         const response = await axios.get(vm.action + '/instrument/' + title);
+        console.log('response:', response);
         try {
           const data = response.data;
           vm.text = data;
@@ -64,10 +65,10 @@ export default {
     this.savedPosition = this.$route.meta.savedPosition;
   },
   computed: {
-		paragraphs() {
-			return this.text.replace(/\n/g, `\n       `);
-		},
-	},
+    paragraphs() { 
+      return this.text.replace(/\\n/g, '\n        ');
+    },
+  },
   methods: {
     goBack() {
       this.$router.back();
@@ -78,6 +79,11 @@ export default {
 </script>
 
 <style>
+
+#instrumentdetail {
+  display: flex;
+  justify-content: center;
+}
 .instru {
   position: absolute;
   height: 20vw;
@@ -102,13 +108,20 @@ export default {
 }
 
 .play {
-  background-color: white;
   position: relative;
   top: 35vw;
-  left: 20vw;
-  text-decoration: none;
   transition: color 0.5s ease;
-  width: 20vw;
   font-size: 2vw;
+  text-indent: 2em;
+  line-height: 1.5;
+	margin: 2% 4%;
+	scrollbar-width: none;
+	box-sizing: border-box;
+	letter-spacing: 0.05em;
+  text-align: left;
+  white-space: pre-wrap;
+}
+.spacer {
+  height: 10vw;
 }
 </style>

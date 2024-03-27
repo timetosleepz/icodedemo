@@ -74,14 +74,14 @@ export default {
       imageItems1: [
         { src: require('@/assets/instrumentpng/di.jpg'), alt: '笛', title: '笛' },
         { src: require('@/assets/instrumentpng/bawu.png'), alt: '巴乌', title: '巴乌' },
-        { src: require('@/assets/instrumentpng/hulusi.png'), alt: '葫芦丝', title: '葫芦丝',link:"http://m10.music.126.net/20240304202546/8d9802015efc2de816c53f806a73afce/ymusic/4aea/1cf3/c52e/ead22195c8cfc05582060069975e86ba.mp3" },
-        { src: require('@/assets/instrumentpng/suona.png'), alt: '唢呐', title: '唢呐',link:"http://m10.music.126.net/20240304194446/e95db30cb9f125ee689299610735f854/ymusic/dafe/9d61/0a3d/cda6c7b0d322262a7c7f1ae6bf35c19c.mp3" },
+        { src: require('@/assets/instrumentpng/hulusi.png'), alt: '葫芦丝', title: '葫芦丝' },
+        { src: require('@/assets/instrumentpng/suona.png'), alt: '唢呐', title: '唢呐' },
         { src: require('@/assets/instrumentpng/lusheng.png'), alt: '芦笙', title: '芦笙' },
         { src: require('@/assets/instrumentpng/xun.png'), alt: '埙', title: '埙' }
       ],
       imageItems2: [
-        { src: require('@/assets/instrumentpng/guqin.png'), alt: '古琴', title: '古琴',link:"http://m801.music.126.net/20240304200746/389d9b358475ce5f071a07a29edc1567/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/32571129503/10b1/67d9/7bd6/1e4e01eccfd936acdc1db7d6ffcf7c51.mp3" },
-        { src: require('@/assets/instrumentpng/guzheng.png'), alt: '古筝', title: '古筝' ,link:"http://m10.music.126.net/20240304193542/9d14f7c127b8fee76673c4e51c0db7e7/ymusic/5汉宫秋月bb8/5801/fa46/0b09540c8776e2f7cf7cb1288a224b28.mp3"},
+        { src: require('@/assets/instrumentpng/guqin.png'), alt: '古琴', title: '古琴' },
+        { src: require('@/assets/instrumentpng/guzheng.png'), alt: '古筝', title: '古筝' },
         { src: require('@/assets/instrumentpng/konghou.png'), alt: '箜篌', title: '箜篌' },
         { src: require('@/assets/instrumentpng/liuqin.png'), alt: '柳琴', title: '柳琴' },
         { src: require('@/assets/instrumentpng/yangqin.png'), alt: '扬琴', title: '扬琴' },
@@ -97,7 +97,7 @@ export default {
       ],
       imageItems4: [
         { src: require('@/assets/instrumentpng/banhu.png'), alt: '板胡', title: '板胡' },
-        { src: require('@/assets/instrumentpng/erhu.png'), alt: '二胡', title: '二胡',link:"http://m10.music.126.net/20240304200118/868e4f1061ce34b4569d8688bce58de6/ymusic/9e66/62a5/a015/3115db359dc5ebd8a12eb7e99079f35b.mp3" },
+        { src: require('@/assets/instrumentpng/erhu.png'), alt: '二胡', title: '二胡' },
         { src: require('@/assets/instrumentpng/matouqin.png'), alt: '马头琴', title: '马头琴' },
         { src: require('@/assets/instrumentpng/jinghu.png'), alt: '京胡', title: '京胡' },
         { src: require('@/assets/instrumentpng/gaohu.png'), alt: '高胡', title: '高胡' },
@@ -110,7 +110,7 @@ export default {
       this.$router.push({
         name: 'InstrumentDetails',
         params: { instrumentId: instrument.id },
-        query: { title: instrument.title, photo: instrument.src,instrumentLink: instrument.link}
+        query: { title: instrument.title, photo: instrument.src}
       });
     },
 
