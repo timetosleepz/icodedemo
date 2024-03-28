@@ -8,7 +8,7 @@
     <div class="poem-container">
       <div v-for="(item, index) in poems" :key="index" class="poem-card" @mouseover="handleMouseOver(item,index)" @mouseleave="handleMouseLeave">
         <div class="poem-title" @click="goToPD(item)">
-          <span v-if="hoveredIndex === index">{{ content }}</span>
+          <span v-if="hoveredIndex === index" id="poemcontent">{{ content }}</span>
           <span v-else>{{ item.title }}</span> 
         </div>
       </div>
@@ -99,6 +99,10 @@ export default {
   opacity: 0;
   transition: opacity 0.3s ease;
   overflow: auto;
+}
+
+#poemcontent {
+  white-space: pre-wrap;
 }
 
 .poem-container {
