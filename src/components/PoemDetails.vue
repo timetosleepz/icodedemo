@@ -6,7 +6,7 @@
         作者：{{ poet }}<br>
       </p>
       <p id="poemcontent">
-        内容：{{ text }}<br><br>
+        {{ text }}<br><br>
       </p>
       <p id="background">
         背景：{{ background }}<br>

@@ -9,7 +9,7 @@
       <div v-for="(item, index) in poems" :key="index" class="poem-card" @mouseover="handleMouseOver(item,index)" @mouseleave="handleMouseLeave">
         <div class="poem-title" @click="goToPD(item)">
           <span v-if="hoveredIndex === index">{{ content }}</span>
-          <span v-else>{{ item.title }}</span>
+          <span v-else>{{ item.title }}</span> 
         </div>
       </div>
     </div>
@@ -86,7 +86,6 @@ export default {
 </script>
 
 <style>
-<<<<<<< HEAD
 .poem-content {
   position: absolute;
   top: 100%;
@@ -95,15 +94,13 @@ export default {
   bottom: -2vw;
   padding: 4vw;
   background: #97CADB;
-  border-radius: 2.5vw;
+  border-radius: 2%;
   box-sizing: border-box;
   opacity: 0;
   transition: opacity 0.3s ease;
   overflow: auto;
 }
 
-=======
->>>>>>> bd91e3ac3c097b67c7dcb261d9b94b81848c4c5f
 .poem-container {
   display: flex;
   flex-wrap: wrap;
@@ -121,7 +118,7 @@ export default {
   max-width: calc(50% - 4vw);
   margin: 2vw;
   padding: 2vw;
-  border-radius: 2.5vw;
+  border-radius: 3%;
   background: #D6E8EE;
   box-sizing: border-box;
   position: relative;
