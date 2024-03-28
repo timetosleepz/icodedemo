@@ -8,7 +8,7 @@
     <div class="poem-container">
       <div v-for="(item, index) in poems" :key="index" class="poem-card" @mouseover="handleMouseOver(item,index)" @mouseleave="handleMouseLeave">
         <div class="poem-title" @click="goToPD(item)">
-          <span v-if="hoveredIndex === index" id="poemcontent">{{ content }}</span>
+          <span v-if="hoveredIndex === index" id="pcontent">{{ content }}</span>
           <span v-else>{{ item.title }}</span> 
         </div>
       </div>
@@ -101,7 +101,7 @@ export default {
   overflow: auto;
 }
 
-#poemcontent {
+#pcontent {
   white-space: pre-wrap;
 }
 

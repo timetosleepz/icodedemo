@@ -11,5 +11,6 @@ module.exports = defineConfig({
         __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: true
       })
     ]
-  }
+  },
+  publicPath:  './',//解决打包后css/js无法解析问题
 })

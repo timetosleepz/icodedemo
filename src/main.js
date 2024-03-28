@@ -56,4 +56,4 @@ router.beforeEach((to, from, next) => {
   next();
 })
 
-createApp(App).use(router).provide('getAction', 'http://localhost:8088').mount('#app')
+createApp(App).use(router).provide('getAction', 'http://localhost:8080/api').mount('#app')
