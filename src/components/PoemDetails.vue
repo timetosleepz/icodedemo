@@ -89,7 +89,6 @@ export default {
 
 #poemcontent {
   text-align: center;
-  font-size: 30px;
   white-space: pre-wrap;
 }
 
